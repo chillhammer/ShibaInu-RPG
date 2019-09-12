@@ -56,7 +56,7 @@ AvatarMask:
   - m_Path: Dog-Armature/LP_ShibaInu:ZBrushPolyMesh3D
     m_Weight: 0
   - m_Path: Dog-Armature/Root
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dog-Armature/Root/Body
     m_Weight: 1
   - m_Path: Dog-Armature/Root/Body/Chest

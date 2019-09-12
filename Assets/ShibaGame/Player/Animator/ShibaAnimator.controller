@@ -109,7 +109,7 @@ AnimatorController:
     m_Mask: {fileID: 31900000, guid: 12a3c577f61b4814eb66c67e392f8e21, type: 2}
     m_Motions: []
     m_Behaviours: []
-    m_BlendingMode: 0
+    m_BlendingMode: 1
     m_SyncedLayerIndex: -1
     m_DefaultWeight: 0
     m_IKPass: 0
@@ -225,9 +225,9 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 3901010954397454568, guid: 3b3ce0da835892d45af52332ee8095ff,
       type: 3}
-    m_Threshold: -0.90751445
+    m_Threshold: -0.25
     m_Position: {x: 0, y: 0}
-    m_TimeScale: -3
+    m_TimeScale: 4
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
     m_Mirror: 0
@@ -243,16 +243,16 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 5118611760662756567, guid: 3b3ce0da835892d45af52332ee8095ff,
       type: 3}
-    m_Threshold: 1
+    m_Threshold: 0.25
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 3
+    m_TimeScale: 4
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
     m_Mirror: 0
   m_BlendParameter: velx
   m_BlendParameterY: velx
-  m_MinThreshold: -0.90751445
-  m_MaxThreshold: 1
+  m_MinThreshold: -0.25
+  m_MaxThreshold: 0.25
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
