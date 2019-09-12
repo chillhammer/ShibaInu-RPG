@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShibaLeanMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Dog-Armature
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.L/FrontFoot.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.L/FrontFoot.L/FrontFoot.L_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.L/FrontLeg_IKPole.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.L/FrontLeg_IKPole.L/FrontLeg_IKPole.L_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.R/FrontFoot.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.R/FrontFoot.R/FrontFoot.R_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.R/FrontLeg_IKPole.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/FrontLeg_IKTarget.R/FrontLeg_IKPole.R/FrontLeg_IKPole.R_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.L/HindFoot.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.L/HindFoot.L/HindFoot.L_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.L/HindLeg_IKPole.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.L/HindLeg_IKPole.L/HindLeg_IKPole.L_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.R/HindFoot.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.R/HindFoot.R/HindFoot.R_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.R/HindLeg_IKPole.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/HindLeg_IKTarget.R/HindLeg_IKPole.R/HindLeg_IKPole.R_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/LP_ShibaInu:ZBrushPolyMesh3D
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Chest
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Chest/Neck
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Chest/Neck/Neck_end
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head/Chin
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head/Chin/Chin_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.L
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.L/Ear.L_end
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.R
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.R/Ear.R_end
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head/Nose
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/Body/Head_IKTarget/Head/Nose/Nose_end
+    m_Weight: 1
+  - m_Path: Dog-Armature/Root/FrontLegUpper.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLeg_IKPoleStretch.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLeg_IKPoleStretch.L/FrontLeg_IKPoleStretch.L_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLegLower.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLegLower.L/FrontLegLower.L_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLeg_IKPoleStretch.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLeg_IKPoleStretch.R/FrontLeg_IKPoleStretch.R_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLegLower.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLegLower.R/FrontLegLower.R_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLeg_IKPoleStretch.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLeg_IKPoleStretch.L/HindLeg_IKPoleStretch.L_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLegLower.L
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLegLower.L/HindLegLower.L_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLeg_IKPoleStretch.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLeg_IKPoleStretch.R/HindLeg_IKPoleStretch.R_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLegLower.R
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLegLower.R/HindLegLower.R_end
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/TailBaseCTRL
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/TailBaseCTRL/TailBase
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/TailBaseCTRL/TailBase/Bone.006
+    m_Weight: 0
+  - m_Path: Dog-Armature/Root/TailBaseCTRL/TailBase/Bone.006/Bone.006_end
+    m_Weight: 0
+  - m_Path: polySurface1
+    m_Weight: 0
+  - m_Path: polySurface2
+    m_Weight: 0
+  - m_Path: polySurface3
+    m_Weight: 0
+  - m_Path: polySurface4
+    m_Weight: 0
+  - m_Path: polySurface5
+    m_Weight: 0
+  - m_Path: polySurface6
+    m_Weight: 0
+  - m_Path: polySurface7
+    m_Weight: 0

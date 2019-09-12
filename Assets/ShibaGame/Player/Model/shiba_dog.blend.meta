@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 3b3ce0da835892d45af52332ee8095ff
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: 1989289236423521904
+    second: Default Take
+  - first:
+      74: 283627345931779961
+    second: LP_ShibaInu:ZBrushPolyMesh3D|Default
+  - first:
+      74: 5049621984924861339
+    second: LP_ShibaInu:ZBrushPolyMesh3D|polySurface1Action
+  - first:
+      74: -1568585245870102986
+    second: LP_ShibaInu:ZBrushPolyMesh3D|polySurface2Action
+  - first:
+      74: -8592448717780994587
+    second: LP_ShibaInu:ZBrushPolyMesh3D|polySurface3Action
+  - first:
+      74: -6763942265543055527
+    second: LP_ShibaInu:ZBrushPolyMesh3D|polySurface3Action.001
+  - first:
+      74: -6482820663055903124
+    second: LP_ShibaInu:ZBrushPolyMesh3D|polySurface4Action
+  - first:
+      74: -906118030492053565
+    second: LP_ShibaInu:ZBrushPolyMesh3D|polySurface5Action
+  - first:
+      74: 6702520147793816774
+    second: LP_ShibaInu:ZBrushPolyMesh3D|polySurface7Action.001
+  - first:
+      74: -1140231353120454309
+    second: Dog-Armature|Default
+  - first:
+      74: -5812128348831198753
+    second: Dog-Armature|DogWalk
+  - first:
+      74: -8213972014197258856
+    second: Dog-Armature|polySurface1Action
+  - first:
+      74: 6842899877368998666
+    second: Dog-Armature|polySurface2Action
+  - first:
+      74: 1470144369644054436
+    second: Dog-Armature|polySurface3Action
+  - first:
+      74: -6423745451410911912
+    second: Dog-Armature|polySurface3Action.001
+  - first:
+      74: -2799229618390436773
+    second: Dog-Armature|polySurface4Action
+  - first:
+      74: -2223160694787010184
+    second: Dog-Armature|polySurface5Action
+  - first:
+      74: -8798759020174961439
+    second: Dog-Armature|polySurface7Action.001
+  - first:
+      74: 2819221909665414766
+    second: Dog-Armature|PoseLib
+  - first:
+      74: -5383576385764452409
+    second: Dog-Armature|DogWalk (1)
+  - first:
+      74: 4068070181917970008
+    second: Dog-Armature|DogRun
+  - first:
+      74: -3332426244098765796
+    second: Dog-Armature|Idle
+  - first:
+      74: -6084588456984849223
+    second: Dog-Armature|DogRunRight
+  - first:
+      74: 5118611760662756567
+    second: Dog-Armature|LeanRight
+  - first:
+      74: 3901010954397454568
+    second: Dog-Armature|LeanLeft
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: bb5eb0e94bd8eee4c960be7c3051aec0, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Dog-Armature|DogWalk
+      takeName: Dog-Armature|DogWalk
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 19.2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dog-Armature|Default
+      takeName: Dog-Armature|Default
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: LP_ShibaInu:ZBrushPolyMesh3D|Default
+      takeName: LP_ShibaInu:ZBrushPolyMesh3D|Default
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 1
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dog-Armature|PoseLib
+      takeName: Dog-Armature|PoseLib
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dog-Armature|DogRun
+      takeName: Dog-Armature|DogRun
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dog-Armature|Idle
+      takeName: Dog-Armature|Idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dog-Armature|DogRunRight
+      takeName: Dog-Armature|DogRunRight
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 1
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dog-Armature|LeanRight
+      takeName: Dog-Armature|LeanRight
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dog-Armature
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.L
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.L/FrontFoot.L
+        weight: 1
+      - path: Dog-Armature/FrontLeg_IKTarget.L/FrontFoot.L/FrontFoot.L_end
+        weight: 1
+      - path: Dog-Armature/FrontLeg_IKTarget.L/FrontLeg_IKPole.L
+        weight: 1
+      - path: Dog-Armature/FrontLeg_IKTarget.L/FrontLeg_IKPole.L/FrontLeg_IKPole.L_end
+        weight: 1
+      - path: Dog-Armature/FrontLeg_IKTarget.R
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.R/FrontFoot.R
+        weight: 1
+      - path: Dog-Armature/FrontLeg_IKTarget.R/FrontFoot.R/FrontFoot.R_end
+        weight: 1
+      - path: Dog-Armature/FrontLeg_IKTarget.R/FrontLeg_IKPole.R
+        weight: 1
+      - path: Dog-Armature/FrontLeg_IKTarget.R/FrontLeg_IKPole.R/FrontLeg_IKPole.R_end
+        weight: 1
+      - path: Dog-Armature/HindLeg_IKTarget.L
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.L/HindFoot.L
+        weight: 1
+      - path: Dog-Armature/HindLeg_IKTarget.L/HindFoot.L/HindFoot.L_end
+        weight: 1
+      - path: Dog-Armature/HindLeg_IKTarget.L/HindLeg_IKPole.L
+        weight: 1
+      - path: Dog-Armature/HindLeg_IKTarget.L/HindLeg_IKPole.L/HindLeg_IKPole.L_end
+        weight: 1
+      - path: Dog-Armature/HindLeg_IKTarget.R
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.R/HindFoot.R
+        weight: 1
+      - path: Dog-Armature/HindLeg_IKTarget.R/HindFoot.R/HindFoot.R_end
+        weight: 1
+      - path: Dog-Armature/HindLeg_IKTarget.R/HindLeg_IKPole.R
+        weight: 1
+      - path: Dog-Armature/HindLeg_IKTarget.R/HindLeg_IKPole.R/HindLeg_IKPole.R_end
+        weight: 1
+      - path: Dog-Armature/LP_ShibaInu:ZBrushPolyMesh3D
+        weight: 0
+      - path: Dog-Armature/Root
+        weight: 1
+      - path: Dog-Armature/Root/Body
+        weight: 1
+      - path: Dog-Armature/Root/Body/Chest
+        weight: 1
+      - path: Dog-Armature/Root/Body/Chest/Neck
+        weight: 1
+      - path: Dog-Armature/Root/Body/Chest/Neck/Neck_end
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Chin
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Chin/Chin_end
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.L
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.L/Ear.L_end
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.R
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.R/Ear.R_end
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Nose
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Nose/Nose_end
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.L
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLeg_IKPoleStretch.L
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLeg_IKPoleStretch.L/FrontLeg_IKPoleStretch.L_end
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLegLower.L
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLegLower.L/FrontLegLower.L_end
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.R
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLeg_IKPoleStretch.R
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLeg_IKPoleStretch.R/FrontLeg_IKPoleStretch.R_end
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLegLower.R
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLegLower.R/FrontLegLower.R_end
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.L
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLeg_IKPoleStretch.L
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLeg_IKPoleStretch.L/HindLeg_IKPoleStretch.L_end
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLegLower.L
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLegLower.L/HindLegLower.L_end
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.R
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLeg_IKPoleStretch.R
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLeg_IKPoleStretch.R/HindLeg_IKPoleStretch.R_end
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLegLower.R
+        weight: 1
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLegLower.R/HindLegLower.R_end
+        weight: 1
+      - path: Dog-Armature/Root/TailBaseCTRL
+        weight: 0
+      - path: Dog-Armature/Root/TailBaseCTRL/TailBase
+        weight: 1
+      - path: Dog-Armature/Root/TailBaseCTRL/TailBase/Bone.006
+        weight: 1
+      - path: Dog-Armature/Root/TailBaseCTRL/TailBase/Bone.006/Bone.006_end
+        weight: 1
+      - path: polySurface1
+        weight: 0
+      - path: polySurface2
+        weight: 0
+      - path: polySurface3
+        weight: 0
+      - path: polySurface4
+        weight: 0
+      - path: polySurface5
+        weight: 0
+      - path: polySurface6
+        weight: 0
+      - path: polySurface7
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dog-Armature|LeanLeft
+      takeName: Dog-Armature|LeanLeft
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dog-Armature
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.L
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.L/FrontFoot.L
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.L/FrontFoot.L/FrontFoot.L_end
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.L/FrontLeg_IKPole.L
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.L/FrontLeg_IKPole.L/FrontLeg_IKPole.L_end
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.R
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.R/FrontFoot.R
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.R/FrontFoot.R/FrontFoot.R_end
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.R/FrontLeg_IKPole.R
+        weight: 0
+      - path: Dog-Armature/FrontLeg_IKTarget.R/FrontLeg_IKPole.R/FrontLeg_IKPole.R_end
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.L
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.L/HindFoot.L
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.L/HindFoot.L/HindFoot.L_end
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.L/HindLeg_IKPole.L
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.L/HindLeg_IKPole.L/HindLeg_IKPole.L_end
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.R
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.R/HindFoot.R
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.R/HindFoot.R/HindFoot.R_end
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.R/HindLeg_IKPole.R
+        weight: 0
+      - path: Dog-Armature/HindLeg_IKTarget.R/HindLeg_IKPole.R/HindLeg_IKPole.R_end
+        weight: 0
+      - path: Dog-Armature/LP_ShibaInu:ZBrushPolyMesh3D
+        weight: 0
+      - path: Dog-Armature/Root
+        weight: 1
+      - path: Dog-Armature/Root/Body
+        weight: 1
+      - path: Dog-Armature/Root/Body/Chest
+        weight: 1
+      - path: Dog-Armature/Root/Body/Chest/Neck
+        weight: 1
+      - path: Dog-Armature/Root/Body/Chest/Neck/Neck_end
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Chin
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Chin/Chin_end
+        weight: 0
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.L
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.L/Ear.L_end
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.R
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Ear.R/Ear.R_end
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Nose
+        weight: 1
+      - path: Dog-Armature/Root/Body/Head_IKTarget/Head/Nose/Nose_end
+        weight: 1
+      - path: Dog-Armature/Root/FrontLegUpper.L
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLeg_IKPoleStretch.L
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLeg_IKPoleStretch.L/FrontLeg_IKPoleStretch.L_end
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLegLower.L
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.L/FrontKnee.L/FrontLegLower.L/FrontLegLower.L_end
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.R
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLeg_IKPoleStretch.R
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLeg_IKPoleStretch.R/FrontLeg_IKPoleStretch.R_end
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLegLower.R
+        weight: 0
+      - path: Dog-Armature/Root/FrontLegUpper.R/FrontKnee.R/FrontLegLower.R/FrontLegLower.R_end
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.L
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLeg_IKPoleStretch.L
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLeg_IKPoleStretch.L/HindLeg_IKPoleStretch.L_end
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLegLower.L
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.L/HindKnee.L/HindLegLower.L/HindLegLower.L_end
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.R
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLeg_IKPoleStretch.R
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLeg_IKPoleStretch.R/HindLeg_IKPoleStretch.R_end
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLegLower.R
+        weight: 0
+      - path: Dog-Armature/Root/HindLegUpper.R/HindKnee.R/HindLegLower.R/HindLegLower.R_end
+        weight: 0
+      - path: Dog-Armature/Root/TailBaseCTRL
+        weight: 0
+      - path: Dog-Armature/Root/TailBaseCTRL/TailBase
+        weight: 0
+      - path: Dog-Armature/Root/TailBaseCTRL/TailBase/Bone.006
+        weight: 0
+      - path: Dog-Armature/Root/TailBaseCTRL/TailBase/Bone.006/Bone.006_end
+        weight: 0
+      - path: polySurface1
+        weight: 0
+      - path: polySurface2
+        weight: 0
+      - path: polySurface3
+        weight: 0
+      - path: polySurface4
+        weight: 0
+      - path: polySurface5
+        weight: 0
+      - path: polySurface6
+        weight: 0
+      - path: polySurface7
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 12a3c577f61b4814eb66c67e392f8e21, type: 2}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
