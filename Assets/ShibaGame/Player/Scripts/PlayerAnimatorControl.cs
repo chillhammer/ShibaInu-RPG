@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerAnimatorControl : MonoBehaviour
 {
+    public CameraPlayerControl cameraControl;
+
+    public float leanLerpSpeed = 2.0f; // Animation speed to switch from leans
+    public float turnSpeedFollowingPlayer = 270.0f;
+    public float turnSpeedFreeCamera = 180.0f;
+
     private Animator anim;
 
     private float lean = 0.0f;
@@ -24,28 +30,44 @@ public class PlayerAnimatorControl : MonoBehaviour
     {
         float inputVert = Input.GetAxis("Vertical");
         float inputHor = Input.GetAxis("Horizontal");
-        
+
+        // Can't Move Backwards if Camera Free
+        if (!cameraControl.followPlayer) inputVert = Mathf.Clamp01(inputVert);
+
+        float movement = Mathf.Sqrt(inputHor * inputHor + inputVert * inputVert);
+
+        float turnSpeed = turnSpeedFreeCamera;
+
+
+        Vector3 inputDir = Vector3.Normalize(new Vector3(inputHor, 0, inputVert));
+        Vector3 facing = transform.forward;
+
+        // Change Input If Following Player
+        if (cameraControl.followPlayer)
+        {
+            Vector3 movementDir = Quaternion.LookRotation(cameraControl.Forward, Vector3.up) * inputDir;
+            float turnAngle = Vector3.SignedAngle(facing, movementDir, Vector3.up);
+            if (Mathf.Abs(turnAngle) < 5.0f) turnAngle = 0.0f; // Remove Jitter
+
+            // Change Turning To Turn to Input Direction
+            inputHor = Mathf.Clamp(turnAngle, -1.0f, 1.0f);
+
+            // Modify Turn Speed
+            turnSpeed = turnSpeedFollowingPlayer;
+        }
+
+
         lean = Mathf.Lerp(lean, inputHor, 2.0f * Time.deltaTime);
-        float movement = Mathf.Sqrt(inputHor * inputHor + inputVert + inputVert) - Mathf.Abs(inputHor) * 0.05f;
+        movement = Mathf.Clamp(movement, 0, (Input.GetKey(KeyCode.LeftShift) ? 0.5f : 1.0f)); // Allow to slow down by holding Shift
 
 
         Vector3 newRootPosition = new Vector3(anim.rootPosition.x, this.transform.position.y, anim.rootPosition.z);
-        Quaternion newRootRotation = anim.rootRotation * Quaternion.AngleAxis(inputHor * 180.0f * Time.deltaTime, Vector3.up);
+        Quaternion newRootRotation = anim.rootRotation * Quaternion.AngleAxis(inputHor * turnSpeed * Time.deltaTime, Vector3.up);
 
 
-        float rootMovementSpeed = 1.0f;
-        float rootTurnSpeed = 1.0f;
+        this.transform.parent.position = newRootPosition;
+        this.transform.parent.rotation = newRootRotation;
 
-        newRootPosition = Vector3.LerpUnclamped(transform.position, newRootPosition, rootMovementSpeed);
-        newRootRotation = Quaternion.LerpUnclamped(transform.rotation, newRootRotation, rootTurnSpeed);
-
-
-        this.transform.position = newRootPosition;
-        this.transform.rotation = newRootRotation;
-
-        
-
-        
 
         anim.SetFloat("vely", movement);
         anim.SetFloat("velx", inputHor);
