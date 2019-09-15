@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Controls animations and other movement
 public class PlayerAnimatorControl : MonoBehaviour
 {
+
+    public bool Leaping { get { return anim.GetBool("Leap"); } set { anim.SetBool("Leap", value); } }
+    public float Movement { get { return Mathf.Clamp01(Mathf.Sqrt(inputHor * inputHor + inputVert * inputVert)); } }
+
     public CameraPlayerControl cameraControl;
 
     public float leanLerpSpeed = 2.0f; // Animation speed to switch from leans
-    public float turnSpeedFollowingPlayer = 270.0f;
+    public float turnSpeedFollowingPlayer = 290.0f;
     public float turnSpeedFreeCamera = 180.0f;
 
     private Animator anim;
 
     private float lean = 0.0f;
+    private float inputHor;
+    private float inputVert;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +35,13 @@ public class PlayerAnimatorControl : MonoBehaviour
 
     void OnAnimatorMove()
     {
-        float inputVert = Input.GetAxis("Vertical");
-        float inputHor = Input.GetAxis("Horizontal");
+        inputVert = Input.GetAxis("Vertical");
+        inputHor = Input.GetAxis("Horizontal");
 
         // Can't Move Backwards if Camera Free
         if (!cameraControl.followPlayer) inputVert = Mathf.Clamp01(inputVert);
 
-        float movement = Mathf.Sqrt(inputHor * inputHor + inputVert * inputVert);
+        float movement = Movement;
 
         float turnSpeed = turnSpeedFreeCamera;
 
@@ -52,9 +59,13 @@ public class PlayerAnimatorControl : MonoBehaviour
             // Change Turning To Turn to Input Direction
             inputHor = Mathf.Clamp(turnAngle, -1.0f, 1.0f);
 
+            
+
             // Modify Turn Speed
             turnSpeed = turnSpeedFollowingPlayer;
         }
+        // Air Slow Turn
+        turnSpeed *= (Leaping ? 0.1f : 1.0f);
 
 
         lean = Mathf.Lerp(lean, inputHor, 2.0f * Time.deltaTime);
@@ -76,4 +87,5 @@ public class PlayerAnimatorControl : MonoBehaviour
         anim.SetLayerWeight(anim.GetLayerIndex("Lean"), Mathf.Abs(lean) * 1.0f);
         
     }
+
 }
