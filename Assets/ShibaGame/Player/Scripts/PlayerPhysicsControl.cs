@@ -9,7 +9,7 @@ public class PlayerPhysicsControl : MonoBehaviour
     public float LeapForceTime = 1.0f;
     private float leapTimer = 0.0f;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
     void Start()
     {
         rb = GetComponent<Rigidbody>();

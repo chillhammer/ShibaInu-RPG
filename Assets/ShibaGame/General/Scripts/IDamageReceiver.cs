@@ -9,9 +9,9 @@ public enum ImpactType
 
 public struct Damage
 {
-    ImpactType impactType;
-    int amount;
-    Vector3 direction;
+    public ImpactType impactType;
+    public int amount;
+    public Vector3 direction;
 }
 
 public interface IDamageReceiver
