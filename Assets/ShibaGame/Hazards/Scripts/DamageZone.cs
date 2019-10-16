@@ -14,10 +14,7 @@ public class DamageZone : MonoBehaviour
         if (receiver != null)
         {
             Vector3 dir = collision.gameObject.transform.position - transform.position;
-            Damage damage = new Damage();
-            damage.impactType = impactType;
-            damage.amount = defaultDamage;
-            damage.direction = dir;
+            Damage damage = new Damage(impactType, defaultDamage, dir);
 
             receiver.TakeDamage(damage);
         }

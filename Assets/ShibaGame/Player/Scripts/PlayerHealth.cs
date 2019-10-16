@@ -14,11 +14,11 @@ public class PlayerHealth : MonoBehaviour, IDamageReceiver
     public void TakeDamage(Damage damage)
     {
         // Health Reduced
-        health = Mathf.Max(0.0f, health - damage.amount);
+        health = Mathf.Max(0.0f, health - damage.Amount);
 
         // Knockback
-        Vector3 dir = damage.direction;
-        switch (damage.impactType)
+        Vector3 dir = damage.Direction;
+        switch (damage.ImpactType)
         {
             case ImpactType.LIGHT:
                 dir = dir * 100.0f + Vector3.up * 10.0f;
