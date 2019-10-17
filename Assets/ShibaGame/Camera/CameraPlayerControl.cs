@@ -25,6 +25,7 @@ public class CameraPlayerControl : MonoBehaviour
     public float pitchSensitivity = 5.0f;
     public float yawSensitivity = 5.0f;
     public float maxZoom = 20.0f;
+    public LayerMask canCollideWith;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +67,7 @@ public class CameraPlayerControl : MonoBehaviour
         float minZ = -maxZoom;
         Ray toCamera = new Ray(pivotTransform.position, cameraHolder.transform.position - pivotTransform.position);
         RaycastHit hit;
-        if (Physics.Raycast(toCamera, out hit, stickLength))
+        if (Physics.Raycast(toCamera, out hit, stickLength, canCollideWith))
         {
             minZ = Mathf.Max(-hit.distance + 0.2f, minZ);
             // Debug.Log("Hit Distance: " + hit.distance);
