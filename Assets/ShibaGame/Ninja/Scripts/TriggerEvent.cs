@@ -10,15 +10,15 @@ public class TriggerEvent : MonoBehaviour
         EXIT,
     }
     public delegate void TriggerAction(ActionType type, Collider collider);
-    public event TriggerAction OnTriggerAction;
+    public event TriggerAction OnTrigger;
 
     void OnTriggerEnter(Collider c)
     {
-        OnTriggerAction(ActionType.ENTER, c);
+        OnTrigger(ActionType.ENTER, c);
     }
 
     void OnTriggerExit(Collider c)
     {
-        OnTriggerAction(ActionType.EXIT, c);
+        OnTrigger(ActionType.EXIT, c);
     }
 }

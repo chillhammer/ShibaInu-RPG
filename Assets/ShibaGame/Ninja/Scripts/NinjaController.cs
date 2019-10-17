@@ -39,10 +39,10 @@ public class NinjaController : MonoBehaviour
         path = new NavMeshPath();
         anim = GetComponent<Animator>();
 
-        agroRangeTrigger.OnTriggerAction += OnAgroRangeTrigger;
-        strafeRangeTrigger.OnTriggerAction += OnStrafeRangeTrigger;
-        attackRangeTrigger.OnTriggerAction += OnAttackRangeTrigger;
-        footTrigger.OnTriggerAction += OnFootTrigger;
+        agroRangeTrigger.OnTrigger += OnAgroRangeTrigger;
+        strafeRangeTrigger.OnTrigger += OnStrafeRangeTrigger;
+        attackRangeTrigger.OnTrigger += OnAttackRangeTrigger;
+        footTrigger.OnTrigger += OnFootTrigger;
     }
 
     void Update()
@@ -84,7 +84,7 @@ public class NinjaController : MonoBehaviour
             if (strafeTimer >= endStrafeTime) {
                 anim.SetTrigger("Attack");
             }
-        } else if (stateInfo.IsName("RunUp")) {
+        } else if (stateInfo.IsName("RunUp") || stateInfo.IsName("Retreat")) {
             na.Move(anim.deltaPosition);
             transform.position = new Vector3(na.nextPosition.x, transform.position.y, na.nextPosition.z);
             transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
