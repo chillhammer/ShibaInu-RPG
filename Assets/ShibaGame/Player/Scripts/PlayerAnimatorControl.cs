@@ -86,9 +86,9 @@ public class PlayerAnimatorControl : MonoBehaviour
         float turnAngle = Vector3.SignedAngle(facing, movementDir, Vector3.up);
 
         // Change Turning To Turn to Input Direction
-        inputHor = Mathf.Clamp(turnAngle, -1.0f, 1.0f);
+        float turnSign = Mathf.Clamp(turnAngle, -1.0f, 1.0f);
 
-        Quaternion newRootRotation = anim.rootRotation * Quaternion.AngleAxis(inputHor * turnSpeed * Time.deltaTime, Vector3.up);
+        Quaternion newRootRotation = anim.rootRotation * Quaternion.AngleAxis(turnSign * turnSpeed * Time.deltaTime, Vector3.up);
 
         // Snap to Target
         if (Mathf.Abs(turnAngle) < snapToFacingAngleThreshold)
@@ -117,7 +117,7 @@ public class PlayerAnimatorControl : MonoBehaviour
         // Modify Turn Speed
         float turnSpeed = (cameraControl.followPlayer ? turnSpeedFollowingPlayer : turnSpeedFreeCamera);
         // Air Slow Turn
-        turnSpeed *= (Leaping ? 0.1f : 1.0f);
+        turnSpeed *= (Leaping ? 0.05f : 1.0f);
 
         return turnSpeed;
     }
