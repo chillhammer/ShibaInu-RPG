@@ -1,33 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamageReceiver
 {
-    public float health = 100.0f;
+    public delegate void DeathAction();
+    public event DeathAction OnDeath;
 
-    public delegate void OnDeath();
-    public OnDeath deathEvent;
+    public delegate void HealthChangeAction(int oldVal, int newVal);
+    public event HealthChangeAction OnHealthChange;
 
     public PlayerPhysicsControl physics;
+
+    [SerializeField]
+    private int maxHealth = 8;
+    public int MaxHealth { get { return maxHealth; }}
+
+    private int _health;
+    private int Health
+    {
+        get { return _health; }
+        set {
+            int oldVal = _health;
+            _health = value;
+            OnHealthChange?.Invoke(oldVal, _health);
+
+            if (Health == 0) {
+                OnDeath?.Invoke();
+            }
+        }
+    }
+
+    void Start()
+    {
+        Health = maxHealth;
+    }
 
     public void TakeDamage(Damage damage)
     {
         // Health Reduced
-        health = Mathf.Max(0.0f, health - damage.amount);
+        Health = Math.Max(0, Health - damage.Amount);
 
         // Knockback
-        Vector3 dir = damage.direction;
-        switch (damage.impactType)
-        {
+        Vector3 dir = damage.Direction;
+        switch (damage.ImpactType) {
             case ImpactType.LIGHT:
-                dir = dir * 100.0f + Vector3.up * 10.0f;
+                dir = dir * 10.0f + Vector3.up * 10.0f;
                 physics.rb.AddForce(dir, ForceMode.Impulse);
                 break;
-        }
-        if (health == 0.0f)
-        {
-            deathEvent.Invoke();
         }
     }
 }

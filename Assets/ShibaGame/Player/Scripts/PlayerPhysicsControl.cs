@@ -21,7 +21,8 @@ public class PlayerPhysicsControl : MonoBehaviour
         if (!animControl.Leaping && Input.GetAxis("Fire1") > 0)
         {
             animControl.Leaping = true;
-            Vector3 leapForce = transform.up * 4f + transform.forward * (25.0f + animControl.Movement * 2.0f);
+            Vector3 leapForce = transform.up * 10f + transform.forward * (5.0f + animControl.Movement * 10.0f);
+            Debug.Log("Movement: " + animControl.Movement);
             rb.velocity = leapForce;
             // rb.AddForce(leapForce, ForceMode.VelocityChange);
             leapTimer = LeapForceTime;
@@ -31,10 +32,10 @@ public class PlayerPhysicsControl : MonoBehaviour
         leapTimer = Mathf.Max(leapTimer - Time.deltaTime, 0.0f);
         if (animControl.Leaping && leapTimer > 0.0f)
         {
-            rb.AddForce(transform.forward * 1000.0f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(transform.forward * 10.0f * Time.deltaTime, ForceMode.Force);
         } else if (animControl.Leaping)
         {
-            rb.AddForce(-Vector3.up * 20.0f, ForceMode.Acceleration);
+            rb.AddForce(-Vector3.up * 50.0f, ForceMode.Acceleration);  
         }
 
         // Exit Leap
