@@ -15,6 +15,7 @@ public class PlayerPhysicsControl : MonoBehaviour
     private CapsuleCollider collider;
 
     private bool wasOnGround = true;
+    public bool enableAutoJump = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,7 +32,8 @@ public class PlayerPhysicsControl : MonoBehaviour
             animControl.Leaping = true;
             Vector3 leapForce = transform.up * 10f + transform.forward * (5.0f + animControl.Movement * 10.0f);
             Debug.Log("Movement: " + animControl.Movement);
-            rb.velocity = leapForce;
+            if (enableAutoJump || Input.GetButtonDown("Jump"))
+                rb.velocity = leapForce;
             // rb.AddForce(leapForce, ForceMode.VelocityChange);
             leapTimer = LeapForceTime;
         }
