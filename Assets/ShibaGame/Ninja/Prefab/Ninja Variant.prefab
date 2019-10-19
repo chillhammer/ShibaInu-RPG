@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   attackDamage: 1
+  health: 3
   minStrafeTime: 1
   maxStrafeTime: 3
   agroRangeTrigger: {fileID: 89362427}
@@ -291,7 +292,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 7ea453b7e2b16f549afb35e90a735ca8,
         type: 3}
       propertyPath: m_Name
-      value: Ninja
+      value: Ninja Variant
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 7ea453b7e2b16f549afb35e90a735ca8,
         type: 3}
@@ -352,6 +353,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7ea453b7e2b16f549afb35e90a735ca8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7ea453b7e2b16f549afb35e90a735ca8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7ea453b7e2b16f549afb35e90a735ca8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2927792998606800557, guid: 7ea453b7e2b16f549afb35e90a735ca8,
         type: 3}
