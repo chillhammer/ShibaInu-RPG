@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NinjaController : MonoBehaviour
+public class NinjaController : MonoBehaviour, IDamageReceiver
 {
     public Transform target;
 
     [SerializeField]
     private int attackDamage = 1;
+    [SerializeField]
+    private int health = 3;
     [SerializeField]
     private float minStrafeTime = 0;
     [SerializeField]
@@ -25,6 +27,7 @@ public class NinjaController : MonoBehaviour
 
     private NavMeshAgent na;
     private Animator anim;
+    private Rigidbody rb;
 
     private NavMeshPath path;
     private Vector3 nextPos;
@@ -38,6 +41,7 @@ public class NinjaController : MonoBehaviour
         na.updatePosition = false;
         path = new NavMeshPath();
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
 
         agroRangeTrigger.OnTrigger += OnAgroRangeTrigger;
         strafeRangeTrigger.OnTrigger += OnStrafeRangeTrigger;
@@ -146,12 +150,32 @@ public class NinjaController : MonoBehaviour
 
     private void OnFootTrigger(TriggerEvent.ActionType type, Collider c)
     {
-        if (type == TriggerEvent.ActionType.ENTER) {
+        AnimatorStateInfo stateInfo = anim.IsInTransition(0) ? anim.GetNextAnimatorStateInfo(0) : anim.GetCurrentAnimatorStateInfo(0);
+
+        if (type == TriggerEvent.ActionType.ENTER && stateInfo.IsName("Attack")) {
             IDamageReceiver dr = c.GetComponent<IDamageReceiver>();
             if (dr != null) {
                 Damage damage = new Damage(ImpactType.LIGHT, attackDamage, (c.transform.position - transform.position).normalized);
                 dr.TakeDamage(damage);
             }
+        }
+    }
+
+    public void TakeDamage(Damage damage)
+    {
+        health -= damage.Amount;
+
+        Vector3 dir = damage.Direction;
+        switch (damage.ImpactType) {
+            case ImpactType.LIGHT:
+                dir = dir * 15.0f + Vector3.up * 15.0f;
+                rb.AddForce(dir, ForceMode.Impulse);
+                break;
+        }
+
+        if (health <= 0) {
+            //TODO: Add death animation or something
+            Destroy(gameObject);
         }
     }
 }

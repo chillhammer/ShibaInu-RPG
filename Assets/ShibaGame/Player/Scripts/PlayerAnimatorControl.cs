@@ -17,6 +17,8 @@ public class PlayerAnimatorControl : MonoBehaviour
 
     public float snapToFacingAngleThreshold = 20.0f;
 
+    public int attackDamage = 1;
+
     private Animator anim;
 
     private float lean = 0.0f;
@@ -34,7 +36,7 @@ public class PlayerAnimatorControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnAnimatorMove()
@@ -64,9 +66,9 @@ public class PlayerAnimatorControl : MonoBehaviour
         anim.SetFloat("vely", movement);
         anim.SetFloat("velx", inputHor);
         anim.SetFloat("lean", lean);
-        
+
         anim.SetLayerWeight(anim.GetLayerIndex("Lean"), Mathf.Abs(lean) * 1.0f);
-        
+
     }
 
     void HandleRotationCameraFollowing()
@@ -120,5 +122,19 @@ public class PlayerAnimatorControl : MonoBehaviour
         turnSpeed *= (Leaping ? 0.05f : 1.0f);
 
         return turnSpeed;
+    }
+
+    private void OnPawTrigger(TriggerEvent.ActionType type, Collider c)
+    {
+        AnimatorStateInfo stateInfo = anim.IsInTransition(0) ? anim.GetNextAnimatorStateInfo(0) : anim.GetCurrentAnimatorStateInfo(0);
+
+        //TODO: Change "Attack" to whatever the attack state is called in the shiba animator
+        if (type == TriggerEvent.ActionType.ENTER && stateInfo.IsName("Attack")) {
+            IDamageReceiver dr = c.GetComponent<IDamageReceiver>();
+            if (dr != null) {
+                Damage damage = new Damage(ImpactType.LIGHT, attackDamage, (c.transform.position - transform.position).normalized);
+                dr.TakeDamage(damage);
+            }
+        }
     }
 }
