@@ -7,6 +7,7 @@ public class PlayerAnimatorControl : MonoBehaviour
 {
 
     public bool Leaping { get { return anim.GetBool("Leap"); } set { anim.SetBool("Leap", value); } }
+    //public bool Attacking { get { return anim.GetBool("Attack"); } set { anim.SetBool("Attack", value); } }
     public float Movement { get { return Mathf.Clamp01(Mathf.Sqrt(inputHor * inputHor + inputVert * inputVert)); } }
 
     public CameraPlayerControl cameraControl;
@@ -18,6 +19,8 @@ public class PlayerAnimatorControl : MonoBehaviour
     public float snapToFacingAngleThreshold = 20.0f;
 
     public int attackDamage = 1;
+
+    public TriggerEvent pawColliderTrigger;
 
     private Animator anim;
 
@@ -31,12 +34,18 @@ public class PlayerAnimatorControl : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         centerOffset = transform.localPosition.z;
+
+        pawColliderTrigger.OnTrigger += OnPawTrigger;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //Attacking = true;
+            anim.SetTrigger("Attack");
+        }
     }
 
     void OnAnimatorMove()
