@@ -1,2 +1,5 @@
 Ninja: https://sketchfab.com/3d-models/bigs2-ninja-game-ready-low-poly-547bdf45338d47b89edac73ad061c6dc
 Heart UI: https://opengameart.org/content/health
+Ninja Hit Sound: https://opengameart.org/content/37-hitspunches
+Ninja Step Sound: https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud
+Ninja Whoosh Sound: https://opengameart.org/content/battle-sound-effects

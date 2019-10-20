@@ -25,9 +25,17 @@ public class NinjaController : MonoBehaviour, IDamageReceiver
     [SerializeField]
     private TriggerEvent footTrigger = null;
 
+    [SerializeField]
+    private AudioClip wooshSound;
+    [SerializeField]
+    private AudioClip hitSound;
+    [SerializeField]
+    private AudioClip stepSound;
+
     private NavMeshAgent na;
     private Animator anim;
     private Rigidbody rb;
+    private SoundModulator sm;
 
     private NavMeshPath path;
     private Vector3 nextPos;
@@ -42,6 +50,7 @@ public class NinjaController : MonoBehaviour, IDamageReceiver
         path = new NavMeshPath();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        sm = GetComponent<SoundModulator>();
 
         agroRangeTrigger.OnTrigger += OnAgroRangeTrigger;
         strafeRangeTrigger.OnTrigger += OnStrafeRangeTrigger;
@@ -157,8 +166,19 @@ public class NinjaController : MonoBehaviour, IDamageReceiver
             if (dr != null) {
                 Damage damage = new Damage(ImpactType.LIGHT, attackDamage, (c.transform.position - transform.position).normalized);
                 dr.TakeDamage(damage);
+                sm.PlayModClip(hitSound);
             }
         }
+    }
+
+    //Animation event audio callbacks
+    public void OnStep()
+    {
+        sm.PlayModClip(stepSound);
+    }
+    public void OnKick()
+    {
+        sm.PlayModClip(wooshSound);
     }
 
     public void TakeDamage(Damage damage)
