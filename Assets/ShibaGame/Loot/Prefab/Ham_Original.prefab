@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 367622603060310025}
   - component: {fileID: 788427125871495655}
   - component: {fileID: 4931824768982480793}
-  - component: {fileID: 7091825165451098762}
   m_Layer: 0
   m_Name: Ham_Original
   m_TagString: Untagged
@@ -109,22 +108,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326f912a207f54468b958cacdc9c0e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &7091825165451098762
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100604612527670485}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 21fef2bb13cc54f4a96389332707fb82, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
