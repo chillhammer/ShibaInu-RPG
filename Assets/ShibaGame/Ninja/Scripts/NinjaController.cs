@@ -195,7 +195,9 @@ public class NinjaController : MonoBehaviour, IDamageReceiver
 
         if (health <= 0) {
             //TODO: Add death animation or something
+            LootDropper ld = gameObject.GetComponent<LootDropper>();
             Destroy(gameObject);
+            ld.DropLoot(transform.position, transform.rotation);
         }
     }
 }
