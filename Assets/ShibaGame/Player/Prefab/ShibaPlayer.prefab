@@ -216,10 +216,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6612312810192500968}
   - component: {fileID: 1587196936}
-  - component: {fileID: 2370824265165833289}
   - component: {fileID: 7593435346071824700}
   - component: {fileID: 1587196934}
-  - component: {fileID: 5817573361609422546}
   - component: {fileID: 6047428595936031260}
   - component: {fileID: 6677953666151383925}
   m_Layer: 8
@@ -259,20 +257,6 @@ CapsuleCollider:
   m_Height: 2.14
   m_Direction: 2
   m_Center: {x: 0, y: 0.87, z: 0.4}
---- !u!136 &2370824265165833289
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957895102907110091}
-  m_Material: {fileID: 13400000, guid: 1e9187d0a86eb8b42b03c8e642c4290f, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.9
-  m_Height: 2.14
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.87, z: 0.4}
 --- !u!54 &7593435346071824700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -290,25 +274,6 @@ Rigidbody:
   m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &1587196934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957895102907110091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f92d247c1e6174c42b230161d033b65f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animControl: {fileID: 1966232358}
-  LeapForceTime: 0.1
-  checkGroundMask:
-    serializedVersion: 2
-    m_Bits: 55
-  rb: {fileID: 0}
-  enableAutoJump: 0
---- !u!114 &5817573361609422546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
