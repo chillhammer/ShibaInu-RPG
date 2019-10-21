@@ -3,3 +3,5 @@ Heart UI: https://opengameart.org/content/health
 Ninja Hit Sound: https://opengameart.org/content/37-hitspunches
 Ninja Step Sound: https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud
 Ninja Whoosh Sound: https://opengameart.org/content/battle-sound-effects
+Ambient Soundtrack: https://opengameart.org/content/creepy-forest-f
+Skybox: https://assetstore.unity.com/packages/2d/textures-materials/sky/classic-skybox-24923
