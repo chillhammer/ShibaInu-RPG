@@ -49,4 +49,9 @@ public class PlayerHealth : MonoBehaviour, IDamageReceiver
                 break;
         }
     }
+
+    public void TakeHeal(Heal heal)
+    {
+        Health = Math.Max(Health + heal.Amount, maxHealth);
+    }
 }
