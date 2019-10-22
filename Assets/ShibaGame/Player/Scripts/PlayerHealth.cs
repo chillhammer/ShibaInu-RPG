@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour, IDamageReceiver
+public class PlayerHealth : MonoBehaviour, IDamageReceiver, IHealthReceiver
 {
     public delegate void DeathAction();
     public event DeathAction OnDeath;
