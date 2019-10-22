@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ShibaGame/Scenes/TitleScreen.unity
+    guid: cbf105278d2359a4e9a28dd937181e82
+  - enabled: 1
+    path: Assets/ShibaGame/Scenes/MainScene.unity
+    guid: a4f3d3fc911f744679c2dbb40753f91b
   m_configObjects: {}

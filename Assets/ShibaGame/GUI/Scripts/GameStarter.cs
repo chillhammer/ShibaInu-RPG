@@ -15,5 +15,6 @@ public class GameStarter : MonoBehaviour
         foreach (GameObject go in dontDestroyOnLoadList)
             DontDestroyOnLoad(go);
         SceneManager.LoadScene(mainSceneName);
+        Time.timeScale = 1;
     }
 }
