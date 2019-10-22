@@ -62,3 +62,9 @@ sysinfo.txt
 crashlytics-build.properties
 
 .vscode/*
+.collabignore
+.DS_Store
+Assets/ShibaGame/.DS_Store
+Assets/ShibaGame/Scenes/.DS_Store
+.collabignore
+.collabignore
