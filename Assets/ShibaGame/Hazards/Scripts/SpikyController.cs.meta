@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 6e88a6cda272b4b1d83f6efd155fcf30
+guid: 9d0e4df0ad65442f880687e95c21fcb3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pierceSound: {fileID: 8300000, guid: 7877050e24e7245e59e7343623e19bbb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
