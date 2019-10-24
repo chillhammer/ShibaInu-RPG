@@ -239,52 +239,6 @@ CapsuleCollider:
   m_Height: 1.7709364
   m_Direction: 1
   m_Center: {x: -0.000000001309266, y: 0.87338644, z: 0.10010147}
---- !u!114 &880546973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8867550088939056913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51b0ce07fe859804197db6ea338a8073, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  attackDamage: 1
-  health: 3
-  minStrafeTime: 1
-  maxStrafeTime: 3
-  agroRangeTrigger: {fileID: 89362427}
-  strafeRangeTrigger: {fileID: 8889325805447748340}
-  attackRangeTrigger: {fileID: 492133689}
-  footTrigger: {fileID: 540630809}
-  wooshSound: {fileID: 8300000, guid: a20f5a6e220123b4c88e0fb1c027072b, type: 3}
-  hitSound: {fileID: 8300000, guid: f51747db207e10f4893f06c539901d2b, type: 3}
-  stepSound: {fileID: 8300000, guid: ffbfb5bc56863b14e8705348363cb251, type: 3}
---- !u!195 &880546974
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8867550088939056913}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 180
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!82 &135582395
 AudioSource:
   m_ObjectHideFlags: 0
@@ -393,6 +347,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d34de0b9710b749a4031217ed7fd2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &880546973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867550088939056913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b0ce07fe859804197db6ea338a8073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  attackDamage: 1
+  minStrafeTime: 1
+  maxStrafeTime: 3
+  agroRangeTrigger: {fileID: 89362427}
+  strafeRangeTrigger: {fileID: 8889325805447748340}
+  attackRangeTrigger: {fileID: 492133689}
+  footTrigger: {fileID: 540630809}
+  wooshSound: {fileID: 8300000, guid: a20f5a6e220123b4c88e0fb1c027072b, type: 3}
+  hitSound: {fileID: 8300000, guid: f51747db207e10f4893f06c539901d2b, type: 3}
+  stepSound: {fileID: 8300000, guid: ffbfb5bc56863b14e8705348363cb251, type: 3}
+--- !u!195 &880546974
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867550088939056913}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 180
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &5852778159898807308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867550088939056913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34da8c465c316144a916de4a826cfa71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightKnockback: 7
+  heavyKnockback: 7
+  maxHealth: 3
 --- !u!1001 &589462222711649816
 PrefabInstance:
   m_ObjectHideFlags: 0
