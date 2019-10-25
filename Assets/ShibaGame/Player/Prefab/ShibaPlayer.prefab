@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482168157482247796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8182852428360803711}
@@ -37,6 +37,7 @@ Transform:
   - {fileID: 3955635358588692659}
   - {fileID: 3923917130021442734}
   - {fileID: 2003810205151241934}
+  - {fileID: 8791155181628814877}
   m_Father: {fileID: 6612312810192500968}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraControl: {fileID: 963194229}
   leanLerpSpeed: 2
-  turnSpeedFollowingPlayer: 700
+  turnSpeedFollowingPlayer: 900
   turnSpeedFreeCamera: 180
   snapToFacingAngleThreshold: 20
   attackDamage: 1
@@ -240,7 +241,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3524727216861418599}
-  - {fileID: 8791155181628814877}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -377,13 +377,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993601806118989485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1513846555819032264}
-  m_Father: {fileID: 6612312810192500968}
-  m_RootOrder: 1
+  m_Father: {fileID: 3524727216861418599}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237497701214818932
 GameObject:
@@ -2742,7 +2742,7 @@ MonoBehaviour:
   maxZoom: 20
   canCollideWith:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 0
 --- !u!1 &8081866004670397842
 GameObject:
   m_ObjectHideFlags: 0
