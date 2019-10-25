@@ -12,7 +12,7 @@ public class PlayerPhysicsControl : MonoBehaviour
     public LayerMask checkGroundMask;
 
     public Rigidbody rb;
-    private CapsuleCollider collider;
+    public CapsuleCollider collider;
 
     private bool wasOnGround = true;
     public bool enableAutoJump = false;
