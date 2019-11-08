@@ -11,11 +11,13 @@ public class PlayerAnimatorControl : MonoBehaviour
     public float Movement { get { return Mathf.Clamp01(Mathf.Sqrt(inputHor * inputHor + inputVert * inputVert)); } }
 
     // Finds out how much the player is facing towards the input direction
+
+    public Vector3 InputDir { get { return Vector3.Normalize(new Vector3(inputHor, 0, inputVert)); } }
+    public Vector3 MovementDir { get { return Quaternion.LookRotation(cameraControl.Forward, Vector3.up) * InputDir; } }
     private float DotToMovementDir {  get {
-            Vector3 inputDir = Vector3.Normalize(new Vector3(inputHor, 0, inputVert));
             Vector3 facing = transform.forward;
 
-            Vector3 movementDir = Quaternion.LookRotation(cameraControl.Forward, Vector3.up) * inputDir;
+            Vector3 movementDir = MovementDir;
 
             return Mathf.Max(Vector3.Dot(facing, movementDir), 0.0f);
         } }
@@ -76,15 +78,16 @@ public class PlayerAnimatorControl : MonoBehaviour
         lean = Mathf.Lerp(lean, inputHor, 2.0f * Time.deltaTime);
 
         // Testing Fixed Rotation, So that Forward Movement Only Works Once Faced in the Right Direction
-        movement = DotToMovementDir;
+        movement = DotToMovementDir * DotToMovementDir;
 
         movement = Mathf.Clamp(movement, 0, (Input.GetKey(KeyCode.LeftShift) ? 0.2f : 1.0f)); // Allow to slow down by holding Shift
 
-       
+
 
         // Movement
-        Vector3 newRootPosition = new Vector3(anim.rootPosition.x, this.transform.position.y, anim.rootPosition.z) - transform.forward * centerOffset;
-        this.transform.parent.position = newRootPosition;
+        Vector3 newRootPosition = new Vector3(anim.rootPosition.x, this.transform.position.y, anim.rootPosition.z);// - transform.forward * centerOffset;
+        this.transform.parent.position += anim.deltaPosition; // newRootPosition;
+        
 
         anim.SetFloat("vely", movement);
         anim.SetFloat("velx", inputHor);
@@ -123,6 +126,7 @@ public class PlayerAnimatorControl : MonoBehaviour
 
         // Setting rotation
         transform.parent.rotation = newRootRotation;
+
     }
 
     void HandleRotationCameraFree()

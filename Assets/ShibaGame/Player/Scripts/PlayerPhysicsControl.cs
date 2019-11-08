@@ -14,6 +14,7 @@ public class PlayerPhysicsControl : MonoBehaviour
     public Rigidbody rb;
     public CapsuleCollider collider;
 
+    [SerializeField]
     private bool wasOnGround = true;
     private float framesSinceGroundContact = 0.0f;
     private float groundContactTime = 10.0f;
@@ -68,10 +69,15 @@ public class PlayerPhysicsControl : MonoBehaviour
 
             if (leapTimer > 0.0f)
             {
-                rb.AddForce(transform.forward * 10.0f * Time.deltaTime, ForceMode.Acceleration);
+                rb.AddForce(transform.forward * 5.0f, ForceMode.Acceleration);
             }
             else
             {
+                rb.AddForce(animControl.MovementDir * 50.0f, ForceMode.Acceleration);
+                Vector3 lateralVelocity = new Vector3(rb.velocity.x, 0.0f, rb.velocity.z);
+                lateralVelocity = Vector3.ClampMagnitude(lateralVelocity, 12.0f);
+                rb.velocity = new Vector3(lateralVelocity.x, rb.velocity.y, lateralVelocity.z);
+
                 rb.AddForce(Vector3.down * 60.0f, ForceMode.Acceleration);
             }
         }
@@ -90,7 +96,7 @@ public class PlayerPhysicsControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!jumpedThisFrame)
+        if (!jumpedThisFrame && IsNormalOnGround(collision))
         {
             animControl.Leaping = false;
             Debug.Log("Exit Leap From Collision");
@@ -98,10 +104,15 @@ public class PlayerPhysicsControl : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (!jumpedThisFrame)
+        if (!jumpedThisFrame && IsNormalOnGround(collision))
         {
+            animControl.Leaping = false;
             framesSinceGroundContact = 0.0f;
             Debug.Log("Setting Frames Since Ground Contact to 0 due to CollisionStay: " + collision.other.gameObject.name);
+        } else
+        {
+            rb.AddForce(Vector3.down * 60.0f, ForceMode.Acceleration);
+            Debug.Log("CollsionStay: Accelerating down");
         }
     }
 
@@ -141,22 +152,33 @@ public class PlayerPhysicsControl : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Vector3 center = transform.position + collider.center;
-        Vector3 extents = collider.bounds.extents;
+        //Vector3 center = transform.position + collider.center;
+        //Vector3 extents = collider.bounds.extents;
+
+        ////Gizmos.color = Color.red;
+        ////Gizmos.DrawWireCube(center, extents);
+        ////Gizmos.color = Color.blue;
+        ////Gizmos.DrawWireCube(center + Vector3.down * 0.1f, extents);
+
+        //Vector3 slimExtents = extents;
+        //slimExtents.y = 0.1f;
 
         //Gizmos.color = Color.red;
-        //Gizmos.DrawWireCube(center, extents);
+        //Gizmos.DrawWireCube(center, slimExtents);
         //Gizmos.color = Color.blue;
-        //Gizmos.DrawWireCube(center + Vector3.down * 0.1f, extents);
+        //Gizmos.DrawWireCube(center + Vector3.down * (0.2f + extents.y), slimExtents);
 
-        Vector3 slimExtents = extents;
-        slimExtents.y = 0.1f;
+        //Gizmos.DrawLine(center, center + Vector3.down * (collider.bounds.extents.y + 0.1f));
+    }
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(center, slimExtents);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(center + Vector3.down * (0.2f + extents.y), slimExtents);
-
-        Gizmos.DrawLine(center, center + Vector3.down * (collider.bounds.extents.y + 0.1f));
+    private bool IsNormalOnGround(Collision collision)
+    {
+        foreach (ContactPoint point in collision.contacts)
+        {
+            Vector3 normal = point.normal;
+            if (Vector3.Dot(normal, Vector3.up) > 0.4f)
+                return true;
+        }
+        return false;
     }
 }
