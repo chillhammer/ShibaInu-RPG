@@ -67,6 +67,8 @@ public class NinjaController : MonoBehaviour
         if (path.corners.Length >= 2) {
             nextPos = path.corners[1];
         }
+
+        rb.AddForce(Vector3.down * 20, ForceMode.Acceleration);
     }
 
     private Vector2 currentDirection;
