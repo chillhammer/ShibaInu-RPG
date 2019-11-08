@@ -6,7 +6,7 @@ public class PlayerPhysicsControl : MonoBehaviour
 {
     public PlayerAnimatorControl animControl;
 
-    public float LeapForceTime = 1.0f;
+    public float LeapForceTime = 0.1f;
     private float leapTimer = 0.0f;
 
     public LayerMask checkGroundMask;
@@ -16,8 +16,10 @@ public class PlayerPhysicsControl : MonoBehaviour
 
     private bool wasOnGround = true;
     private float framesSinceGroundContact = 0.0f;
-    private float groundContactTime = 5.0f;
+    private float groundContactTime = 10.0f;
     public bool enableAutoJump = false;
+
+    private bool jumpedThisFrame = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,16 +28,24 @@ public class PlayerPhysicsControl : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("New Frame. Y: " + transform.position.y);
+        jumpedThisFrame = false;
         framesSinceGroundContact++;
         bool onGround = CheckOnGround();
 
         // Leap
         if (!IsLeaping() && (Input.GetButtonDown("Jump") || (wasOnGround && !onGround)))
         {
+            if (Input.GetButtonDown("Jump"))
+                Debug.Log("Starting Leap because Jump is Down");
+            if (wasOnGround && !onGround)
+                Debug.Log("Starting Leap because wasOnGround and now not");
+
             animControl.Leaping = true;
+            jumpedThisFrame = true;
             //onGround = false;
             //framesSinceGroundContact = groundContactTime;
-            Vector3 leapForce = transform.up * 10f + transform.forward * (2.0f + animControl.Movement * 10.0f);
+            Vector3 leapForce = transform.up * 20f + transform.forward * (2.0f + animControl.Movement * 10.0f);
             Debug.Log("Movement: " + animControl.Movement);
             if (enableAutoJump || Input.GetButtonDown("Jump"))
                 rb.velocity = leapForce;
@@ -55,33 +65,44 @@ public class PlayerPhysicsControl : MonoBehaviour
         leapTimer = Mathf.Max(leapTimer - Time.deltaTime, 0.0f);
         if (IsLeaping())
         {
-            
+
             if (leapTimer > 0.0f)
             {
                 rb.AddForce(transform.forward * 10.0f * Time.deltaTime, ForceMode.Acceleration);
             }
             else
             {
-                rb.AddForce(Vector3.down * 20.0f, ForceMode.Acceleration);
+                rb.AddForce(Vector3.down * 60.0f, ForceMode.Acceleration);
             }
         }
-        rb.AddForce(Vector3.down * 20.0f, ForceMode.Acceleration);
+        else
+        {
+            rb.AddForce(Vector3.down * 20.0f, ForceMode.Acceleration);
+        }
 
         // Exit Leap
-        if (onGround)
+        if (onGround && IsLeaping())
         {
+            Debug.Log("Exit Leap From OnGround. WasOnGround is: " + (wasOnGround ? "True" : "False"));
             animControl.Leaping = false;
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        animControl.Leaping = false;
+        if (!jumpedThisFrame)
+        {
+            animControl.Leaping = false;
+            Debug.Log("Exit Leap From Collision");
+        }
     }
     private void OnCollisionStay(Collision collision)
     {
-
-        framesSinceGroundContact = 0.0f;
+        if (!jumpedThisFrame)
+        {
+            framesSinceGroundContact = 0.0f;
+            Debug.Log("Setting Frames Since Ground Contact to 0 due to CollisionStay: " + collision.other.gameObject.name);
+        }
     }
 
     bool IsLeaping()
@@ -91,6 +112,9 @@ public class PlayerPhysicsControl : MonoBehaviour
 
     bool CheckOnGround()
     {
+        if (Input.GetButtonDown("Jump"))
+            framesSinceGroundContact = groundContactTime;
+
         return framesSinceGroundContact < groundContactTime;
         Vector3 center = transform.position;
         Vector3 extents = collider.bounds.extents;

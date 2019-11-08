@@ -10,6 +10,16 @@ public class PlayerAnimatorControl : MonoBehaviour
     //public bool Attacking { get { return anim.GetBool("Attack"); } set { anim.SetBool("Attack", value); } }
     public float Movement { get { return Mathf.Clamp01(Mathf.Sqrt(inputHor * inputHor + inputVert * inputVert)); } }
 
+    // Finds out how much the player is facing towards the input direction
+    private float DotToMovementDir {  get {
+            Vector3 inputDir = Vector3.Normalize(new Vector3(inputHor, 0, inputVert));
+            Vector3 facing = transform.forward;
+
+            Vector3 movementDir = Quaternion.LookRotation(cameraControl.Forward, Vector3.up) * inputDir;
+
+            return Mathf.Max(Vector3.Dot(facing, movementDir), 0.0f);
+        } }
+
     public CameraPlayerControl cameraControl;
 
     public float leanLerpSpeed = 2.0f; // Animation speed to switch from leans
@@ -64,12 +74,16 @@ public class PlayerAnimatorControl : MonoBehaviour
 
 
         lean = Mathf.Lerp(lean, inputHor, 2.0f * Time.deltaTime);
-        //lean = inputHor;
-        movement = Mathf.Clamp(movement, 0, (Input.GetKey(KeyCode.LeftShift) ? 0.5f : 1.0f)); // Allow to slow down by holding Shift
 
+        // Testing Fixed Rotation, So that Forward Movement Only Works Once Faced in the Right Direction
+        movement = DotToMovementDir;
+
+        movement = Mathf.Clamp(movement, 0, (Input.GetKey(KeyCode.LeftShift) ? 0.2f : 1.0f)); // Allow to slow down by holding Shift
+
+       
+
+        // Movement
         Vector3 newRootPosition = new Vector3(anim.rootPosition.x, this.transform.position.y, anim.rootPosition.z) - transform.forward * centerOffset;
-
-
         this.transform.parent.position = newRootPosition;
 
         anim.SetFloat("vely", movement);
@@ -127,8 +141,8 @@ public class PlayerAnimatorControl : MonoBehaviour
     {
         // Modify Turn Speed
         float turnSpeed = (cameraControl.followPlayer ? turnSpeedFollowingPlayer : turnSpeedFreeCamera);
-        // Air Slow Turn
-        turnSpeed *= (Leaping ? 0.05f : 1.0f);
+        // Air Slow Turn - Currently disabled. Weird edge case that needs to be fixed here
+        //turnSpeed *= (Leaping ? 0.05f : 1.0f);
 
         return turnSpeed;
     }
