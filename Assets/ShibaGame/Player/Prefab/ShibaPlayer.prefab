@@ -290,8 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7908c1768eecb7148a9e5f5c93518324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physics: {fileID: 1587196934}
+  lightKnockback: 7
+  heavyKnockback: 7
   maxHealth: 8
+  physics: {fileID: 1587196934}
 --- !u!114 &6677953666151383925
 MonoBehaviour:
   m_ObjectHideFlags: 0

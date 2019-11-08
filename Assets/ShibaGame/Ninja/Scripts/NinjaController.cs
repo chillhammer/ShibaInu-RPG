@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NinjaController : MonoBehaviour, IDamageReceiver
+public class NinjaController : MonoBehaviour
 {
     public Transform target;
 
     [SerializeField]
     private int attackDamage = 1;
-    [SerializeField]
-    private int health = 3;
     [SerializeField]
     private float minStrafeTime = 0;
     [SerializeField]
@@ -36,6 +34,7 @@ public class NinjaController : MonoBehaviour, IDamageReceiver
     private Animator anim;
     private Rigidbody rb;
     private SoundModulator sm;
+    private Health health;
 
     private NavMeshPath path;
     private Vector3 nextPos;
@@ -51,11 +50,14 @@ public class NinjaController : MonoBehaviour, IDamageReceiver
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         sm = GetComponent<SoundModulator>();
+        health = GetComponent<Health>();
 
         agroRangeTrigger.OnTrigger += OnAgroRangeTrigger;
         strafeRangeTrigger.OnTrigger += OnStrafeRangeTrigger;
         attackRangeTrigger.OnTrigger += OnAttackRangeTrigger;
         footTrigger.OnTrigger += OnFootTrigger;
+
+        health.OnDeath = OnDeath;
     }
 
     void Update()
@@ -171,6 +173,13 @@ public class NinjaController : MonoBehaviour, IDamageReceiver
         }
     }
 
+    private bool OnDeath()
+    {
+        LootDropper ld = gameObject.GetComponent<LootDropper>();
+        ld.DropLoot(transform.position, transform.rotation);
+        return false;
+    }
+
     //Animation event audio callbacks
     public void OnStep()
     {
@@ -179,25 +188,5 @@ public class NinjaController : MonoBehaviour, IDamageReceiver
     public void OnKick()
     {
         sm.PlayModClip(wooshSound);
-    }
-
-    public void TakeDamage(Damage damage)
-    {
-        health -= damage.Amount;
-
-        Vector3 dir = damage.Direction;
-        switch (damage.ImpactType) {
-            case ImpactType.LIGHT:
-                dir = dir * 15.0f + Vector3.up * 15.0f;
-                rb.AddForce(dir, ForceMode.Impulse);
-                break;
-        }
-
-        if (health <= 0) {
-            //TODO: Add death animation or something
-            LootDropper ld = gameObject.GetComponent<LootDropper>();
-            Destroy(gameObject);
-            ld.DropLoot(transform.position, transform.rotation);
-        }
     }
 }
