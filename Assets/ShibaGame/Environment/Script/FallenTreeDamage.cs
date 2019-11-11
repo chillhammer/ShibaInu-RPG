@@ -6,14 +6,6 @@ public class FallenTreeDamage : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     public int treeDamage = 10;
-    [SerializeField] private AudioClip pierceSound;
-
-    private SoundModulator sm;
-
-    void Start()
-    {
-        sm = GetComponent<SoundModulator>();
-    }
 
     void OnTriggerEnter(Collider c)
     {
@@ -24,7 +16,6 @@ public class FallenTreeDamage : MonoBehaviour
             {
                 Damage damage = new Damage(ImpactType.LIGHT, treeDamage, (c.transform.position - transform.position).normalized);
                 dr.TakeDamage(damage);
-                sm.PlayModClip(pierceSound);
             }
         }
     }

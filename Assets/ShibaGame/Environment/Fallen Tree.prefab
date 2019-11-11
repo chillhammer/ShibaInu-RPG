@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4770365870665599147}
   - component: {fileID: 4770365870665599144}
   - component: {fileID: 4770365870665599145}
+  - component: {fileID: 706635761}
+  - component: {fileID: 706635760}
   m_Layer: 9
   m_Name: CubeTrigger
   m_TagString: Untagged
@@ -28,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4770365870665599143}
   m_LocalRotation: {x: -0, y: -0.49208048, z: -0, w: 0.8705497}
-  m_LocalPosition: {x: 5.7, y: 1.27, z: -3.96}
-  m_LocalScale: {x: 29.810453, y: 7.208434, z: 11.363431}
+  m_LocalPosition: {x: 3.33, y: 1.27, z: -5.75}
+  m_LocalScale: {x: 29.810453, y: 7.208434, z: 9.967996}
   m_Children: []
   m_Father: {fileID: 4770365870831610519}
   m_RootOrder: 0
@@ -106,6 +108,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 7263342074035936212}
+  sound: {fileID: 8300000, guid: e4f85a8417e204cbcaa91e268430c732, type: 3}
+--- !u!82 &706635761
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770365870665599143}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e4f85a8417e204cbcaa91e268430c732, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0.75
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &706635760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770365870665599143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d34de0b9710b749a4031217ed7fd2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4770365870832059577
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 4770365870832059577}
   m_LocalRotation: {x: 0, y: 0.5266813, z: 0, w: 0.85006285}
   m_LocalPosition: {x: 135.23575, y: 2.3, z: 74.74229}
-  m_LocalScale: {x: 1, y: 1.1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.4, z: 1.2}
   m_Children:
   - {fileID: 4770365870665599142}
   m_Father: {fileID: 0}
@@ -246,4 +357,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 7263342074035936212}
   treeDamage: 1
-  pierceSound: {fileID: 8300000, guid: 7877050e24e7245e59e7343623e19bbb, type: 3}
