@@ -127,6 +127,12 @@ public class PlayerAnimatorControl : MonoBehaviour
         // Setting rotation
         transform.parent.rotation = newRootRotation;
 
+        // Failed attempt to extract only y component of rotation to coordinate with x,z components being set to terrain's normals
+        //Quaternion orientQuat = Quaternion.FromToRotation(Vector3.up, orientVec);
+        //Quaternion rot = transform.parent.rotation;
+        //rot.eulerAngles = new Vector3(rot.x, newRootRotation.eulerAngles.y, rot.z);
+        //transform.parent.rotation = rot;
+
     }
 
     void HandleRotationCameraFree()
