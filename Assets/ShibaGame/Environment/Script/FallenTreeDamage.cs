@@ -9,7 +9,7 @@ public class FallenTreeDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider c)
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Fallen Tree"))
+        if (anim.GetBool("FallenTree"))
         {
             IDamageReceiver dr = c.GetComponent<IDamageReceiver>();
             if (dr != null)

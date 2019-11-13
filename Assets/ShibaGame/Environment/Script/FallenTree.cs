@@ -29,7 +29,6 @@ public class FallenTree : MonoBehaviour
         if (c.attachedRigidbody)
         {
             anim.SetBool("FallenTree", false);
-
         }
     }
 
