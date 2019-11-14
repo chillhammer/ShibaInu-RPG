@@ -7,15 +7,26 @@ public class SlimeController : MonoBehaviour
     [SerializeField]
     private int attackDamage = 1;
 
+    [SerializeField]
+    private AudioClip sound1;
+    [SerializeField]
+    private AudioClip sound2;
+    [SerializeField]
+    private AudioClip sound3;
+    [SerializeField]
+    private AudioClip sound4;
+
     private Animator anim;
     private Rigidbody rb;
     private Health health;
+    private SoundModulator sm;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         health = GetComponent<Health>();
+        sm = GetComponent<SoundModulator>();
 
         health.OnDeath = OnDeath;
     }
@@ -55,5 +66,16 @@ public class SlimeController : MonoBehaviour
         LootDropper ld = gameObject.GetComponent<LootDropper>();
         ld.DropLoot(transform.position, transform.rotation);
         return false;
+    }
+
+    // Animation event audio callbacks
+    public void OnJump()
+    {
+        sm.PlayModClip(sound3);
+    }
+
+    public void OnLand()
+    {
+        sm.PlayModClip(sound1);
     }
 }
