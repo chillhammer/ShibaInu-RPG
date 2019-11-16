@@ -184,6 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0e4df0ad65442f880687e95c21fcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamage: 1
+  pierceSound: {fileID: 8300000, guid: 7877050e24e7245e59e7343623e19bbb, type: 3}
 --- !u!1 &8742119465170709148
 GameObject:
   m_ObjectHideFlags: 0
