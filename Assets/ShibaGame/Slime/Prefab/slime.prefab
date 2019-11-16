@@ -326,7 +326,8 @@ GameObject:
   - component: {fileID: 4559780783591288949}
   - component: {fileID: 4081887661958009616}
   - component: {fileID: -536181325567674650}
-  - component: {fileID: -711678301707593035}
+  - component: {fileID: 1607600092597212063}
+  - component: {fileID: 433824912756413313}
   m_Layer: 0
   m_Name: slime
   m_TagString: Untagged
@@ -389,6 +390,8 @@ MonoBehaviour:
   sound2: {fileID: 8300000, guid: 152847e48f0abba4cb1b20b6cd06c087, type: 3}
   sound3: {fileID: 8300000, guid: 388dede64b8c207439409363b41bea92, type: 3}
   sound4: {fileID: 8300000, guid: 3306c115a5da2074ab47bbd844ff580b, type: 3}
+  playJumpSound: 1
+  playIdleSound: 0
 --- !u!95 &4559780783591288949
 Animator:
   serializedVersion: 3
@@ -520,7 +523,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-711678301707593035
+--- !u!114 &1607600092597212063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,6 +535,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d34de0b9710b749a4031217ed7fd2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &433824912756413313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559780783591288950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34235806b36d446b4ac853a096c569ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 2560765338270335826, guid: b0d45370bd3d54044bac2a2169699d76, type: 3}
 --- !u!1 &4832001907840512674
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,13 @@ public class SlimeController : MonoBehaviour
     private Health health;
     private SoundModulator sm;
 
+    private GameObject player;
+    private bool pursuePlayer;
+    private Vector3 forward;
+
+    public bool playJumpSound;
+    public bool playIdleSound;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -29,6 +36,25 @@ public class SlimeController : MonoBehaviour
         sm = GetComponent<SoundModulator>();
 
         health.OnDeath = OnDeath;
+        pursuePlayer = false;
+        forward = new Vector3(0, 0, 0);
+    }
+
+    private void Update()
+    {
+        if (player != null && pursuePlayer)
+        {
+            Vector3 towardPlayer = player.transform.position - transform.position;
+            Quaternion rotationTowardPlayer = Quaternion.LookRotation(towardPlayer);
+            Vector3 euler = rotationTowardPlayer.eulerAngles;
+            // Fix the rotation around the y-axis only so that the slime still always faces upright
+            transform.rotation = Quaternion.Euler(0, euler.y, 0);
+            forward.x = towardPlayer.x * Time.deltaTime * 100;
+            forward.z = towardPlayer.z * Time.deltaTime * 100;
+            //Debug.Log("transform.position before: " + transform.position);
+            //transform.position = new Vector3(transform.position.x + forward.x, transform.position.y + forward.y, transform.position.z + forward.z);
+            //Debug.Log("transform.position after: " + transform.position);
+        }
     }
 
     private void OnCollisionEnter(Collision coll)
@@ -44,19 +70,21 @@ public class SlimeController : MonoBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
-        IDamageReceiver dr = c.GetComponent<IDamageReceiver>();
-        if (dr != null)
+        if (c.gameObject.CompareTag("Player"))
         {
+            player = c.gameObject;
             anim.SetBool("SlimeHop", true);
+            pursuePlayer = true;
         }
     }
 
     private void OnTriggerExit(Collider c)
     {
-        IDamageReceiver dr = c.GetComponent<IDamageReceiver>();
-        if (dr != null)
+        if (c.gameObject.CompareTag("Player"))
         {
+            player = c.gameObject;
             anim.SetBool("SlimeHop", false);
+            pursuePlayer = false;
         }
     }
 
@@ -71,11 +99,23 @@ public class SlimeController : MonoBehaviour
     // Animation event audio callbacks
     public void OnJump()
     {
-        sm.PlayModClip(sound3);
+        if (playJumpSound)
+        {
+            sm.PlayModClip(sound2);
+        }
+        // transform.position = transform.position 
+        // + 
+        // new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
+        Debug.Log(forward);
+
+        //transform.position = transform.position + forward;
     }
 
-    public void OnLand()
+    public void OnIdle()
     {
-        sm.PlayModClip(sound1);
+        if (playIdleSound)
+        {
+            sm.PlayModClip(sound4);
+        } 
     }
 }
