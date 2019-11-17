@@ -65,16 +65,19 @@ public class Health : MonoBehaviour, IDamageReceiver
 
             Amount -= damage.Amount;
 
-            Vector3 dir = damage.Direction;
             switch (damage.ImpactType) {
                 case ImpactType.LIGHT:
-                    dir = dir * lightKnockback;
-                    rb.AddForce(dir, ForceMode.Impulse);
+                {
+                    Vector3 force = damage.Direction * lightKnockback + Vector3.up * 10;
+                    rb.AddForce(force, ForceMode.Impulse);
                     break;
+                }
                 case ImpactType.HEAVY:
-                    dir = dir * heavyKnockback;
-                    rb.AddForce(dir, ForceMode.Impulse);
+                {
+                    Vector3 force = damage.Direction * heavyKnockback + Vector3.up * 10;
+                    rb.AddForce(force, ForceMode.Impulse);
                     break;
+                }
             }
 
             OnTakeDamage?.Invoke();

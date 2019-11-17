@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7908c1768eecb7148a9e5f5c93518324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightKnockback: 7
-  heavyKnockback: 7
+  lightKnockback: 15
+  heavyKnockback: 20
   maxHealth: 8
   invulnerableDuration: 1
   physics: {fileID: 1587196934}

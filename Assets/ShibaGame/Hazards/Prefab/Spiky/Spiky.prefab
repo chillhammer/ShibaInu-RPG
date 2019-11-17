@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8742119463963972106}
   - component: {fileID: 5821645480309414820}
-  - component: {fileID: 3789443610135678342}
   - component: {fileID: 7024035251231904248}
   - component: {fileID: 546447749762258989}
   - component: {fileID: 5675658834809400060}
@@ -50,20 +49,6 @@ CapsuleCollider:
   m_Height: 91.40722
   m_Direction: 1
   m_Center: {x: -2.7793374, y: -0.7578341, z: 23.687}
---- !u!114 &3789443610135678342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8742119463963972107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c98e6ec81907444aa76610ec95e490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impactType: 1
-  defaultDamage: 10
 --- !u!82 &7024035251231904248
 AudioSource:
   m_ObjectHideFlags: 0
@@ -184,6 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0e4df0ad65442f880687e95c21fcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamage: 1
+  pierceSound: {fileID: 8300000, guid: 7877050e24e7245e59e7343623e19bbb, type: 3}
 --- !u!1 &8742119465170709148
 GameObject:
   m_ObjectHideFlags: 0
