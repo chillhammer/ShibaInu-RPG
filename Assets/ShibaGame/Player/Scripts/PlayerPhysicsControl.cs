@@ -223,7 +223,7 @@ public class PlayerPhysicsControl : MonoBehaviour
         foreach (ContactPoint point in collision.contacts)
         {
             Vector3 normal = point.normal;
-            if (Vector3.Dot(normal, Vector3.up) > 0.4f)
+            if (Vector3.Dot(normal, Vector3.up) > 0.6f)
                 return true;
         }
         return false;

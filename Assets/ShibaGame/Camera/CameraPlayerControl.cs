@@ -27,6 +27,8 @@ public class CameraPlayerControl : MonoBehaviour
     public float maxZoom = 20.0f;
     public LayerMask canCollideWith;
 
+    public LockOn lockOn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,8 +55,24 @@ public class CameraPlayerControl : MonoBehaviour
 
         transform.position = cameraHolder.transform.position;
 
-        cameraEulers.x = Mathf.Clamp(cameraEulers.x - Input.GetAxis("Mouse Y") * Time.deltaTime * pitchSensitivity, minPitchAngle, maxPitchAngle);
-        cameraEulers.y = cameraEulers.y + Input.GetAxis("Mouse X") * Time.deltaTime * yawSensitivity;
+        if (!lockOn.IsLocked)
+        {
+            cameraEulers.x = Mathf.Clamp(cameraEulers.x - Input.GetAxis("Mouse Y") * Time.deltaTime * pitchSensitivity, minPitchAngle, maxPitchAngle);
+            cameraEulers.y = cameraEulers.y + Input.GetAxis("Mouse X") * Time.deltaTime * yawSensitivity;
+        } else
+        {
+            
+            Quaternion lockOnRotation = Quaternion.LookRotation(lockOn.target.transform.position - lockOn.transform.position);
+            Vector3 targetEulers = lockOnRotation.eulerAngles;
+            targetEulers.x = 25.0f;
+            lockOnRotation = Quaternion.Euler(targetEulers);
+
+            Quaternion temp = Quaternion.Euler(cameraEulers);
+            temp = Quaternion.Slerp(temp, lockOnRotation, 0.1f);
+            cameraEulers = temp.eulerAngles;
+
+            //cameraEulers = Vector3.Slerp(cameraEulers, targetEulers, 0.1f);
+        }
 
         // Rotating Pivot
         Quaternion pivotRotation = Quaternion.Euler(cameraEulers);

@@ -7,7 +7,7 @@ public class PlayerAnimatorControl : MonoBehaviour
 {
 
     public bool Leaping { get { return anim.GetBool("Leap"); } set { anim.SetBool("Leap", value); } }
-    //public bool Attacking { get { return anim.GetBool("Attack"); } set { anim.SetBool("Attack", value); } }
+    public bool Attacking { get { return anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"); } }
     public float Movement { get { return Mathf.Clamp01(Mathf.Sqrt(inputHor * inputHor + inputVert * inputVert)); } }
 
     // Finds out how much the player is facing towards the input direction
@@ -36,6 +36,9 @@ public class PlayerAnimatorControl : MonoBehaviour
 
     private Animator anim;
 
+    [SerializeField]
+    private LockOn lockOn;
+
     private float lean = 0.0f;
     private float inputHor;
     private float inputVert;
@@ -53,10 +56,14 @@ public class PlayerAnimatorControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !Leaping)
         {
             //Attacking = true;
             anim.SetTrigger("Attack");
+
+            if (lockOn.IsLocked)
+                transform.parent.rotation = Quaternion.LookRotation(    
+                    new Vector3(lockOn.target.transform.position.x - transform.parent.position.x, 0.0f, lockOn.target.transform.position.z - transform.parent.position.z));
         }
     }
 
@@ -80,7 +87,7 @@ public class PlayerAnimatorControl : MonoBehaviour
         // Testing Fixed Rotation, So that Forward Movement Only Works Once Faced in the Right Direction
         movement = DotToMovementDir * DotToMovementDir;
 
-        movement = Mathf.Clamp(movement, 0, (Input.GetKey(KeyCode.LeftShift) ? 0.2f : 1.0f)); // Allow to slow down by holding Shift
+        movement = Mathf.Clamp(movement, 0, (Input.GetKey(KeyCode.LeftShift) ? 0.1f : 1.0f)); // Allow to slow down by holding Shift
 
 
 
@@ -99,7 +106,7 @@ public class PlayerAnimatorControl : MonoBehaviour
 
     void HandleRotationCameraFollowing()
     {
-        if (!cameraControl.followPlayer || Movement == 0.0f)
+        if (!cameraControl.followPlayer || Movement == 0.0f || Attacking)
             return;
 
         float movement = Movement;
