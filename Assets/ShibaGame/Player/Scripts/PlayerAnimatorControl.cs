@@ -7,8 +7,20 @@ public class PlayerAnimatorControl : MonoBehaviour
 {
 
     public bool Leaping { get { return anim.GetBool("Leap"); } set { anim.SetBool("Leap", value); } }
-    //public bool Attacking { get { return anim.GetBool("Attack"); } set { anim.SetBool("Attack", value); } }
+    public bool Attacking { get { return anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"); } }
     public float Movement { get { return Mathf.Clamp01(Mathf.Sqrt(inputHor * inputHor + inputVert * inputVert)); } }
+
+    // Finds out how much the player is facing towards the input direction
+
+    public Vector3 InputDir { get { return Vector3.Normalize(new Vector3(inputHor, 0, inputVert)); } }
+    public Vector3 MovementDir { get { return Quaternion.LookRotation(cameraControl.Forward, Vector3.up) * InputDir; } }
+    private float DotToMovementDir {  get {
+            Vector3 facing = transform.forward;
+
+            Vector3 movementDir = MovementDir;
+
+            return Mathf.Max(Vector3.Dot(facing, movementDir), 0.0f);
+        } }
 
     public CameraPlayerControl cameraControl;
 
@@ -23,6 +35,9 @@ public class PlayerAnimatorControl : MonoBehaviour
     public TriggerEvent pawColliderTrigger;
 
     private Animator anim;
+
+    [SerializeField]
+    private LockOn lockOn;
 
     private float lean = 0.0f;
     private float inputHor;
@@ -41,10 +56,14 @@ public class PlayerAnimatorControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !Leaping)
         {
             //Attacking = true;
             anim.SetTrigger("Attack");
+
+            if (lockOn.IsLocked)
+                transform.parent.rotation = Quaternion.LookRotation(    
+                    new Vector3(lockOn.target.transform.position.x - transform.parent.position.x, 0.0f, lockOn.target.transform.position.z - transform.parent.position.z));
         }
     }
 
@@ -64,13 +83,18 @@ public class PlayerAnimatorControl : MonoBehaviour
 
 
         lean = Mathf.Lerp(lean, inputHor, 2.0f * Time.deltaTime);
-        //lean = inputHor;
-        movement = Mathf.Clamp(movement, 0, (Input.GetKey(KeyCode.LeftShift) ? 0.5f : 1.0f)); // Allow to slow down by holding Shift
 
-        Vector3 newRootPosition = new Vector3(anim.rootPosition.x, this.transform.position.y, anim.rootPosition.z) - transform.forward * centerOffset;
+        // Testing Fixed Rotation, So that Forward Movement Only Works Once Faced in the Right Direction
+        movement = DotToMovementDir * DotToMovementDir;
+
+        movement = Mathf.Clamp(movement, 0, (Input.GetKey(KeyCode.LeftShift) ? 0.1f : 1.0f)); // Allow to slow down by holding Shift
 
 
-        this.transform.parent.position = newRootPosition;
+
+        // Movement
+        Vector3 newRootPosition = new Vector3(anim.rootPosition.x, this.transform.position.y, anim.rootPosition.z);// - transform.forward * centerOffset;
+        this.transform.parent.position += anim.deltaPosition; // newRootPosition;
+        
 
         anim.SetFloat("vely", movement);
         anim.SetFloat("velx", inputHor);
@@ -82,7 +106,7 @@ public class PlayerAnimatorControl : MonoBehaviour
 
     void HandleRotationCameraFollowing()
     {
-        if (!cameraControl.followPlayer || Movement == 0.0f)
+        if (!cameraControl.followPlayer || Movement == 0.0f || Attacking)
             return;
 
         float movement = Movement;
@@ -109,6 +133,13 @@ public class PlayerAnimatorControl : MonoBehaviour
 
         // Setting rotation
         transform.parent.rotation = newRootRotation;
+
+        // Failed attempt to extract only y component of rotation to coordinate with x,z components being set to terrain's normals
+        //Quaternion orientQuat = Quaternion.FromToRotation(Vector3.up, orientVec);
+        //Quaternion rot = transform.parent.rotation;
+        //rot.eulerAngles = new Vector3(rot.x, newRootRotation.eulerAngles.y, rot.z);
+        //transform.parent.rotation = rot;
+
     }
 
     void HandleRotationCameraFree()
@@ -127,8 +158,8 @@ public class PlayerAnimatorControl : MonoBehaviour
     {
         // Modify Turn Speed
         float turnSpeed = (cameraControl.followPlayer ? turnSpeedFollowingPlayer : turnSpeedFreeCamera);
-        // Air Slow Turn
-        turnSpeed *= (Leaping ? 0.05f : 1.0f);
+        // Air Slow Turn - Currently disabled. Weird edge case that needs to be fixed here
+        //turnSpeed *= (Leaping ? 0.05f : 1.0f);
 
         return turnSpeed;
     }

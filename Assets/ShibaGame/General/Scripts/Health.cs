@@ -22,6 +22,9 @@ public class Health : MonoBehaviour, IDamageReceiver
     private float heavyKnockback = 7;
     [SerializeField]
     protected int maxHealth = 3;
+    [SerializeField]
+    private float invulnerableDuration = 1;
+
     public int MaxHealth { get { return maxHealth; }}
 
     private int _amount;
@@ -41,33 +44,48 @@ public class Health : MonoBehaviour, IDamageReceiver
 
     private Rigidbody rb;
 
-    public void Start()
+    private float invulnerableTimer;
+
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         Amount = maxHealth;
     }
 
+    protected virtual void Update()
+    {
+        if (invulnerableTimer > 0)
+            invulnerableTimer -= Time.deltaTime;
+    }
+
     public void TakeDamage(Damage damage)
     {
-        Amount -= damage.Amount;
+        if (invulnerableTimer <= 0) {
+            invulnerableTimer = invulnerableDuration;
 
-        Vector3 dir = damage.Direction;
-        switch (damage.ImpactType) {
-            case ImpactType.LIGHT:
-                dir = dir * lightKnockback;
-                rb.AddForce(dir, ForceMode.Impulse);
-                break;
-            case ImpactType.HEAVY:
-                dir = dir * heavyKnockback;
-                rb.AddForce(dir, ForceMode.Impulse);
-                break;
-        }
+            Amount -= damage.Amount;
 
-        OnTakeDamage?.Invoke();
+            switch (damage.ImpactType) {
+                case ImpactType.LIGHT:
+                {
+                    Vector3 force = damage.Direction * lightKnockback + Vector3.up * 10;
+                    rb.AddForce(force, ForceMode.Impulse);
+                    break;
+                }
+                case ImpactType.HEAVY:
+                {
+                    Vector3 force = damage.Direction * heavyKnockback + Vector3.up * 10;
+                    rb.AddForce(force, ForceMode.Impulse);
+                    break;
+                }
+            }
 
-        if (Amount <= 0) {
-            if (OnDeath == null || !OnDeath()) {
-                Destroy(gameObject);
+            OnTakeDamage?.Invoke();
+
+            if (Amount <= 0) {
+                if (OnDeath == null || !OnDeath()) {
+                    Destroy(gameObject);
+                }
             }
         }
     }

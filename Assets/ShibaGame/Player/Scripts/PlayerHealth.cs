@@ -5,7 +5,7 @@ public class PlayerHealth : Health, IHealthReceiver
 {
     public PlayerPhysicsControl physics;
 
-    new void Start()
+    override protected void Start()
     {
         base.Start();
         OnDeath = RealOnDeath;

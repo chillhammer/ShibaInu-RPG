@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482168157482247796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8182852428360803711}
@@ -73,11 +73,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraControl: {fileID: 963194229}
   leanLerpSpeed: 2
-  turnSpeedFollowingPlayer: 700
+  turnSpeedFollowingPlayer: 1000
   turnSpeedFreeCamera: 180
   snapToFacingAngleThreshold: 20
   attackDamage: 1
   pawColliderTrigger: {fileID: 1630916847426583219}
+  lockOn: {fileID: 917182388}
 --- !u!1 &732993536766211747
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,9 +222,10 @@ GameObject:
   - component: {fileID: 6047428595936031260}
   - component: {fileID: 6677953666151383925}
   - component: {fileID: 2502548036900165473}
+  - component: {fileID: 917182388}
   m_Layer: 8
   m_Name: ShibaPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,6 +278,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   rb: {fileID: 2502548036900165473}
+  collider: {fileID: 1587196936}
+  wasOnGround: 1
   enableAutoJump: 0
 --- !u!114 &6047428595936031260
 MonoBehaviour:
@@ -289,9 +293,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7908c1768eecb7148a9e5f5c93518324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightKnockback: 7
-  heavyKnockback: 7
+  lightKnockback: 15
+  heavyKnockback: 20
   maxHealth: 8
+  invulnerableDuration: 1
   physics: {fileID: 1587196934}
 --- !u!114 &6677953666151383925
 MonoBehaviour:
@@ -324,6 +329,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &917182388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957895102907110091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03fc23a3f194c34d975fe3041695ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockOnCamera: {fileID: 3652270624156135694}
+  pivotTransform: {fileID: 8791155181628814877}
+  lockOnCanvas: {fileID: 0}
+  lockOnImage: {fileID: 0}
+  cameraControl: {fileID: 963194229}
+  target: {fileID: 0}
+  IsLocked: 0
 --- !u!1 &959436649295387747
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,8 +402,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993601806118989485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.48, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9189289, z: -0.144219}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1513846555819032264}
@@ -809,7 +833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2631989051381775331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1827494061822021943}
@@ -2743,7 +2767,8 @@ MonoBehaviour:
   maxZoom: 20
   canCollideWith:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 0
+  lockOn: {fileID: 917182388}
 --- !u!1 &8081866004670397842
 GameObject:
   m_ObjectHideFlags: 0
