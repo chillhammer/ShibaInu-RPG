@@ -436,8 +436,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7170599771711874959}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.160002, y: -1.7412838, z: 0}
-  m_LocalScale: {x: 3.8876188, y: 0.33865064, z: 0.559547}
+  m_LocalPosition: {x: 4.16, y: -9.94, z: 0}
+  m_LocalScale: {x: 21.993664, y: 0.33865064, z: 0.559547}
   m_Children: []
   m_Father: {fileID: 7170599772517581621}
   m_RootOrder: 1
@@ -526,7 +526,7 @@ Transform:
   m_GameObject: {fileID: 7170599772517581620}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 134.49, y: 4.44, z: 37.23}
-  m_LocalScale: {x: 1, y: 2.800001, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7218841001947923719}
   - {fileID: 7170599771711874944}
@@ -540,6 +540,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7218841001947923719}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Height
+      value: 2.3783755
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.y
+      value: -0.0027903481
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.z
+      value: -0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.x
+      value: 0.00024342537
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 0.51624745
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1360994071702760, guid: 640e2e58c89e3714881006bd0c5eeabf, type: 3}
       propertyPath: m_Name
       value: Log
@@ -594,30 +618,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4988496768901222, guid: 640e2e58c89e3714881006bd0c5eeabf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Height
-      value: 2.3783755
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Center.y
-      value: -0.0027903481
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Center.z
-      value: -0.00000011920929
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Center.x
-      value: 0.00024342537
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Radius
-      value: 0.51624745
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23164466822775924, guid: 640e2e58c89e3714881006bd0c5eeabf,
