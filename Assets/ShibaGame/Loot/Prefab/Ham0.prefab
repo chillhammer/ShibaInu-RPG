@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6369615317232865150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 131.39572, y: 4.096927, z: 21.129889}
+  m_LocalPosition: {x: 128.2262, y: 4.096805, z: 21.113848}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 8293636520131679429}
@@ -115,16 +115,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9036935452923297379, guid: 6fb94a8d08d31014db8df82c2547ae97,
-        type: 3}
-      propertyPath: slurpSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 00fb594e64f214f5e9afc5e381c000ad, type: 3}
-    - target: {fileID: 804762768013907249, guid: 6fb94a8d08d31014db8df82c2547ae97,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 179fcdabf0ffc471f9981fc7e7d839b2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
 --- !u!4 &8293636520131679429 stripped
