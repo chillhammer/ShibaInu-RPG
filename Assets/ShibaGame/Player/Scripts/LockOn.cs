@@ -52,10 +52,6 @@ public class LockOn : MonoBehaviour
 
         }
 
-        
-    }
-    private void LateUpdate()
-    {
         lockOnImage.enabled = false;
         IsLocked = false;
         if (Input.GetMouseButton(1) && target != null)
@@ -64,5 +60,9 @@ public class LockOn : MonoBehaviour
             lockOnImage.transform.position = lockOnCamera.WorldToScreenPoint(target.transform.position);
             IsLocked = true;
         }
+    }
+    private void LateUpdate()
+    {
+        
     }
 }
