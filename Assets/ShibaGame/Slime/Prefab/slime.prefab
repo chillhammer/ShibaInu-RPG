@@ -422,8 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34da8c465c316144a916de4a826cfa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightKnockback: 5
-  heavyKnockback: 7
+  lightKnockback: 15
+  heavyKnockback: 20
   maxHealth: 3
   invulnerableDuration: 1
 --- !u!82 &-536181325567674650

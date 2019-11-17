@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958958570039698058}
   m_Layer: 0
-  m_Name: Slime 1
+  m_Name: Slime Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,6 +127,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1061605856714620340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3605553488964031827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88a4393ab36fa14d88480f8b83a860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &958958571016643877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,11 +146,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 958958570039698058}
     m_Modifications:
-    - target: {fileID: 4559780783591288950, guid: 3a8ab8b3a1762ad4fb2b535eecffb6a8,
-        type: 3}
-      propertyPath: m_Name
-      value: slime
-      objectReference: {fileID: 0}
     - target: {fileID: 656612599496606309, guid: 3a8ab8b3a1762ad4fb2b535eecffb6a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -193,6 +200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559780783591288950, guid: 3a8ab8b3a1762ad4fb2b535eecffb6a8,
+        type: 3}
+      propertyPath: m_Name
+      value: slime
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -711678301707593035, guid: 3a8ab8b3a1762ad4fb2b535eecffb6a8, type: 3}
