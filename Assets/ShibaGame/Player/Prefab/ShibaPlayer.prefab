@@ -296,8 +296,9 @@ MonoBehaviour:
   lightKnockback: 15
   heavyKnockback: 20
   maxHealth: 8
-  invulnerableDuration: 1
+  invulnerableDuration: 0.5
   physics: {fileID: 1587196934}
+  titleScreenScene: TitleScreen
 --- !u!114 &6677953666151383925
 MonoBehaviour:
   m_ObjectHideFlags: 0

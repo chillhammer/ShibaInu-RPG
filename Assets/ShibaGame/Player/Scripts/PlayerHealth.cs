@@ -1,9 +1,13 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health, IHealthReceiver
 {
     public PlayerPhysicsControl physics;
+
+    [SerializeField]
+    private string titleScreenScene = null;
 
     override protected void Start()
     {
@@ -18,6 +22,7 @@ public class PlayerHealth : Health, IHealthReceiver
 
     private bool RealOnDeath()
     {
+        SceneManager.LoadScene(titleScreenScene);
         return true;
     }
 }
