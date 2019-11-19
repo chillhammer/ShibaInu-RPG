@@ -10577,6 +10577,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwingingLog
       objectReference: {fileID: 0}
+    - target: {fileID: 1739047698559397627, guid: d4d5857c2277e4b16b620249cf4f65e9,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7170599772517581621, guid: d4d5857c2277e4b16b620249cf4f65e9,
         type: 3}
       propertyPath: m_LocalPosition.x
