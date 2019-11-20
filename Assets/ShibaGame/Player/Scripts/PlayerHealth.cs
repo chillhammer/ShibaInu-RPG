@@ -17,7 +17,7 @@ public class PlayerHealth : Health, IHealthReceiver
 
     public void TakeHeal(Heal heal)
     {
-        Amount = Math.Max(Amount + heal.Amount, maxHealth);
+        Amount = Math.Min(Amount + heal.Amount, maxHealth);
     }
 
     private bool RealOnDeath()

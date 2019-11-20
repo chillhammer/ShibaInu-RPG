@@ -2028,7 +2028,7 @@ GameObject:
   - component: {fileID: 7386982128328329396}
   - component: {fileID: 6971915371434542563}
   - component: {fileID: 1630916847426583219}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PawCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

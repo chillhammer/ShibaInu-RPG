@@ -36,8 +36,10 @@ public class Health : MonoBehaviour, IDamageReceiver
             _amount = value;
             OnHealthChange?.Invoke(oldVal, _amount);
 
-            if (_amount == 0) {
-                OnDeath?.Invoke();
+            if (_amount <= 0) {
+                if (OnDeath == null || !OnDeath()) {
+                    Destroy(gameObject);
+                }
             }
         }
     }
@@ -63,6 +65,7 @@ public class Health : MonoBehaviour, IDamageReceiver
         if (invulnerableTimer <= 0) {
             invulnerableTimer = invulnerableDuration;
 
+            OnTakeDamage?.Invoke();
             Amount -= damage.Amount;
 
             switch (damage.ImpactType) {
@@ -80,13 +83,6 @@ public class Health : MonoBehaviour, IDamageReceiver
                 }
             }
 
-            OnTakeDamage?.Invoke();
-
-            if (Amount <= 0) {
-                if (OnDeath == null || !OnDeath()) {
-                    Destroy(gameObject);
-                }
-            }
         }
     }
 }

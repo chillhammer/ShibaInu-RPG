@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6369615317232865150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.412113, y: 17.258436, z: 76.43}
+  m_LocalPosition: {x: 138.47673, y: 4.2688303, z: 106.54966}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 8293636520131679429}
@@ -59,6 +59,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ham_Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100604612527670485, guid: 6fb94a8d08d31014db8df82c2547ae97,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3133802868966209222, guid: 6fb94a8d08d31014db8df82c2547ae97,
         type: 3}
@@ -114,6 +119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228571899260394871, guid: 6fb94a8d08d31014db8df82c2547ae97,
+        type: 3}
+      propertyPath: defaultHeal
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}

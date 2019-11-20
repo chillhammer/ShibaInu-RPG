@@ -9,7 +9,6 @@ public class Droppable : MonoBehaviour
 	{
 		location.y += 1.7166f;
 		location.z += 2.0f;
-		transform.position = location;
 		Instantiate(gameObject, location, angle);
 		Debug.Log("Loot instantiated at enemy location: " + location.ToString("F4"));
 	}
