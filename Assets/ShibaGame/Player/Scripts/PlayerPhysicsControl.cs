@@ -27,7 +27,7 @@ public class PlayerPhysicsControl : MonoBehaviour
         collider = GetComponent<CapsuleCollider>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         //Debug.Log("New Frame. Y: " + transform.position.y);
         jumpedThisFrame = false;
@@ -65,7 +65,7 @@ public class PlayerPhysicsControl : MonoBehaviour
         wasOnGround = onGround;
 
         // Leap Force
-        leapTimer = Mathf.Max(leapTimer - Time.deltaTime, 0.0f);
+        leapTimer = Mathf.Max(leapTimer - 1, 0.0f);
         if (IsLeaping())
         {
 
@@ -86,7 +86,7 @@ public class PlayerPhysicsControl : MonoBehaviour
                 {
                     float lateralVelocityMagnitude = lateralVelocity.magnitude;
                     Debug.Log("in-air drag. magnitude: " + lateralVelocityMagnitude + " and movementDir: " + animControl.MovementDir);
-                    lateralVelocity -= lateralVelocity.normalized * Mathf.Min(lateralVelocityMagnitude, 10.0f * Time.deltaTime);
+                    lateralVelocity -= lateralVelocity.normalized * Mathf.Min(lateralVelocityMagnitude, 10.0f);
                 }
                 rb.velocity = new Vector3(lateralVelocity.x, rb.velocity.y, lateralVelocity.z);
 
