@@ -424,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightKnockback: 15
   heavyKnockback: 20
-  maxHealth: 3
+  maxHealth: 1
   invulnerableDuration: 1
 --- !u!82 &-536181325567674650
 AudioSource:
