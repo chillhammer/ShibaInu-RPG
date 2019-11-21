@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4770365870665599143}
   m_LocalRotation: {x: -0, y: -0.49208048, z: -0, w: 0.8705497}
-  m_LocalPosition: {x: 3.33, y: 1.27, z: -5.75}
+  m_LocalPosition: {x: 2.96, y: 1.27, z: -5.52}
   m_LocalScale: {x: 29.810453, y: 7.208434, z: 9.967996}
   m_Children: []
   m_Father: {fileID: 4770365870831610519}
@@ -302,7 +302,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -318,7 +318,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4770365870832059577}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.49
   m_Height: 7.6
