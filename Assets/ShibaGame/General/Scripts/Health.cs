@@ -24,6 +24,8 @@ public class Health : MonoBehaviour, IDamageReceiver
     protected int maxHealth = 3;
     [SerializeField]
     private float invulnerableDuration = 1;
+    [SerializeField]
+    private float flashInterval = 0.1f;
 
     public int MaxHealth { get { return maxHealth; }}
 
@@ -45,12 +47,14 @@ public class Health : MonoBehaviour, IDamageReceiver
     }
 
     private Rigidbody rb;
+    private Renderer[] renderers = null;
 
     private float invulnerableTimer;
 
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
+        renderers = GetComponentsInChildren<Renderer>();
         Amount = maxHealth;
     }
 
@@ -83,6 +87,19 @@ public class Health : MonoBehaviour, IDamageReceiver
                 }
             }
 
+            StartCoroutine(InvulnerableRoutine());
         }
+    }
+
+    private IEnumerator InvulnerableRoutine()
+    {
+        while (invulnerableTimer > 0)
+        {
+            foreach (Renderer r in renderers)
+                r.enabled = !r.enabled;
+            yield return new WaitForSeconds(flashInterval);
+        }
+        foreach (Renderer r in renderers)
+            r.enabled = true;
     }
 }

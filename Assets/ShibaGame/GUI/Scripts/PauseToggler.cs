@@ -16,7 +16,7 @@ public class PauseToggler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             if (cg.alpha == 1) {
                 ToggleCanvasGroup(false);
                 Time.timeScale = 1;
