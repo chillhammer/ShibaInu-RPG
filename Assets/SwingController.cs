@@ -17,9 +17,8 @@ public class SwingController : MonoBehaviour
 
     void Update()
     {
-        Quaternion theta = startPosition;
-        theta.x += direction * (Mathf.Sin(Time.time * speed) * range);
-        transform.rotation = theta;
-
+        Vector3 theta = startPosition.eulerAngles;
+        theta.z += direction * (Mathf.Sin(Time.time * speed) * range);
+        transform.rotation = Quaternion.Euler(theta);
     }
 }
