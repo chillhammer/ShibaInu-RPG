@@ -7,11 +7,11 @@ public class FallenTreeDamage : MonoBehaviour
     [SerializeField] private Animator anim;
     public int treeDamage = 10;
 
-    void OnTriggerEnter(Collider c)
+    void OnCollisionEnter(Collision c)
     {
         if (anim.GetBool("FallenTree"))
         {
-            IDamageReceiver dr = c.GetComponent<IDamageReceiver>();
+            IDamageReceiver dr = c.collider.GetComponent<IDamageReceiver>();
             if (dr != null)
             {
                 Damage damage = new Damage(ImpactType.LIGHT, treeDamage, (c.transform.position - transform.position).normalized);
