@@ -297,8 +297,9 @@ MonoBehaviour:
   heavyKnockback: 20
   maxHealth: 8
   invulnerableDuration: 0.5
+  flashInterval: 0.1
   physics: {fileID: 1587196934}
-  titleScreenScene: TitleScreen
+  resetScene: MainScene
 --- !u!114 &6677953666151383925
 MonoBehaviour:
   m_ObjectHideFlags: 0

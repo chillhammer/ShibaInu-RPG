@@ -7,7 +7,7 @@ public class PlayerHealth : Health, IHealthReceiver
     public PlayerPhysicsControl physics;
 
     [SerializeField]
-    private string titleScreenScene = null;
+    private string resetScene = null;
 
     override protected void Start()
     {
@@ -22,7 +22,7 @@ public class PlayerHealth : Health, IHealthReceiver
 
     private bool RealOnDeath()
     {
-        SceneManager.LoadScene(titleScreenScene);
+        SceneManager.LoadScene(resetScene);
         return true;
     }
 }
