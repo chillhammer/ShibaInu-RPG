@@ -47,6 +47,7 @@ public class PlayerPhysicsControl : MonoBehaviour
 
             animControl.Leaping = true;
             jumpedThisFrame = true;
+            animControl.JumpSound();
             //onGround = false;
             //framesSinceGroundContact = groundContactTime;
             Vector3 leapForce = transform.up * 15f + transform.forward * (2.0f + animControl.Movement * 10.0f);

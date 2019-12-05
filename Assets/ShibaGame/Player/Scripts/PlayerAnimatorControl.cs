@@ -44,6 +44,15 @@ public class PlayerAnimatorControl : MonoBehaviour
     private float inputVert;
     private float centerOffset;
 
+
+    private SoundModulator sm;
+    [SerializeField]
+    private AudioClip jumpSound;
+    [SerializeField]
+    private AudioClip hitSound;
+    [SerializeField]
+    private AudioClip stepSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +60,8 @@ public class PlayerAnimatorControl : MonoBehaviour
         centerOffset = transform.localPosition.z;
 
         pawColliderTrigger.OnTrigger += OnPawTrigger;
+
+        sm = GetComponent<SoundModulator>();
     }
 
     // Update is called once per frame
@@ -176,5 +187,18 @@ public class PlayerAnimatorControl : MonoBehaviour
                 dr.TakeDamage(damage);
             }
         }
+    }
+
+    public void Footstep()
+    {
+        sm.PlayModClip(stepSound);
+    }
+    public void HurtSound()
+    {
+        sm.PlayModClip(hitSound);
+    }
+    public void JumpSound()
+    {
+        sm.PlayModClip(jumpSound);
     }
 }

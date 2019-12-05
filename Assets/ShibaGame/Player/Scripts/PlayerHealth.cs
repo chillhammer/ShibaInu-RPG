@@ -13,6 +13,7 @@ public class PlayerHealth : Health, IHealthReceiver
     {
         base.Start();
         OnDeath = RealOnDeath;
+        OnTakeDamage += physics.animControl.HurtSound;
     }
 
     public void TakeHeal(Heal heal)
