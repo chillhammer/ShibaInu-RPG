@@ -7,7 +7,7 @@ public class PlayerHealth : Health, IHealthReceiver
     public PlayerPhysicsControl physics;
 
     [SerializeField]
-    private string resetScene = null;
+    private CanvasGroup deathOverlay;
 
     override protected void Start()
     {
@@ -22,7 +22,12 @@ public class PlayerHealth : Health, IHealthReceiver
 
     private bool RealOnDeath()
     {
-        SceneManager.LoadScene(resetScene);
+        deathOverlay.alpha = 1;
+        deathOverlay.blocksRaycasts = true;
+        deathOverlay.interactable = true;
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         return true;
     }
 }
