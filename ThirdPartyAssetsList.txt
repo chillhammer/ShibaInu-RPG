@@ -5,3 +5,4 @@ Ninja Step Sound: https://opengameart.org/content/different-steps-on-wood-stone-
 Ninja Whoosh Sound: https://opengameart.org/content/battle-sound-effects
 Ambient Soundtrack: https://opengameart.org/content/creepy-forest-f
 Skybox: https://assetstore.unity.com/packages/2d/textures-materials/sky/classic-skybox-24923
+Gate: https://sketchfab.com/3d-models/metal-grate-bc71182bb3d546cf990d36c1f0cd09d1

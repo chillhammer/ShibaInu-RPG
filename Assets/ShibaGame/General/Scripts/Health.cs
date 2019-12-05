@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,10 @@ public class Health : MonoBehaviour, IDamageReceiver
 
     /// Returns true if it handles destroying the GameObject
     public delegate bool DeathAction();
+    /// Only to be used by sibling scripts
     public DeathAction OnDeath;
+
+    public event Action OnDeathExternal;
 
     [SerializeField]
     private float lightKnockback = 5;
@@ -39,6 +43,7 @@ public class Health : MonoBehaviour, IDamageReceiver
             OnHealthChange?.Invoke(oldVal, _amount);
 
             if (_amount <= 0) {
+                OnDeathExternal?.Invoke();
                 if (OnDeath == null || !OnDeath()) {
                     Destroy(gameObject);
                 }
