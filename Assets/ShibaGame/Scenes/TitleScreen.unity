@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551f4ae0d2340b24a8c5ce5d34a4da7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSceneName: MainScene
+  mainSceneName: HelpScene
   dontDestroyOnLoadList:
   - {fileID: 1914830940}
 --- !u!1001 &1609870477
