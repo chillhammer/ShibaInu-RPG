@@ -2,18 +2,19 @@ Team Members:
 
 Andrew Hoyt, andrewhoyt@gatech.edu, ahoyt9
 Brandon Shockley, bshockley3@gatech.edu, bshockley3
-Joseph Gonzales-Dones
+Joseph Gonzales-Dones, joeygonzalesdones@gatech.edu, jag9
 Rosemary Blair, rosieblair@gatech.edu, rblair8
 Xueyu Wang, xueyuw@gatech.edu, xwang970
 
 Gameplay Instructions:
 
 Controls
-- WASD to move
+- WASD or arrow keys to move
 - Move mouse to pan camera
 - Left click to attack
 - Hold right click to lock on to faced enemy
 - Space to jump
+- Esc to pause
 
 General Guide
 - Traverse through the linear level
@@ -44,7 +45,7 @@ Precursors to Fun Gameplay
   - Uses root motion for ground translation
   - Uses non-root rotation + slight leaning animation for more responsive turning
 - Camera follows player tightly
-- Auditory feedback (TODO: Andrew is on this)
+- Auditory feedback
   - Animation events to trigger footsteps
   - Event-based system for triggering other sound effects
     - Hurt
@@ -71,7 +72,7 @@ Real-Time NPC Steering Behaviors / Artificial Intelligence
     - Quickly retreat to a safe distance
   - Root motion for animation
 - Slime enemy
-  - Just faces player when in range and bounces up and down
+  - Faces player when in range and bounces up and down (Triggered)
   - Basic mecanim animation
 
 Polish
@@ -95,6 +96,7 @@ Known Deficiencies/Bugs:
 - Not *all* interactions have corresponding sounds
 - Ninja can sometimes be moved into the air, which it has no appropriate animations to respond to
 - Health pickups (hams) sometimes float after dropping
+- Shiba player unpredictably falls through the ground on the starting platform (computer dependent/performance issue)
 
 External Resources:
 Shiba: https://www.artstation.com/artwork/xzyvym
