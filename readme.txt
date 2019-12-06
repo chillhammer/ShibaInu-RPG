@@ -109,12 +109,11 @@ Ninja Whoosh Sound: https://opengameart.org/content/battle-sound-effects
 Ambient Soundtrack: https://opengameart.org/content/creepy-forest-f
 Skybox: https://assetstore.unity.com/packages/2d/textures-materials/sky/classic-skybox-24923
 Environment: https://assetstore.unity.com/packages/3d/environments/nature-starter-kit-2-52977
-TODO: Add the rest
-Ham:
-Ham Sound:
-Spikey Bush:
-Spikey Bush Sound:
-Log Texture:
+Ham: https://assetstore.unity.com/packages/3d/props/food/frood-free-food-and-drinks-pack-152103
+Ham Sound: https://freesound.org/s/133280/
+Spikey Bush: https://free3d.com/3d-model/coral-v1--901825.html
+Spikey Bush Sound: https://freesound.org/s/240875/
+Swinging Log Impact Audio: https://freesound.org/s/369711/
 Rock Falling Sound: http://soundbible.com/1987-Rockslide-Small.html
 Tree Falling Sound: http://soundbible.com/2039-Tree-Fall-Small.html
 
@@ -131,7 +130,7 @@ Brandon Shockley
 - UI configuration and linkage to game state
 
 Joseph Gonzales-Dones
-- Slime enemy
+- Slime enemy (model and sounds created from scratch using OpenSCAD, Blender, and Audacity)
 
 Rosemary Blair
 - Swinging log hazard
