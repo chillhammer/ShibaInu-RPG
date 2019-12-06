@@ -96,7 +96,7 @@ Known Deficiencies/Bugs:
 - Not *all* interactions have corresponding sounds
 - Ninja can sometimes be moved into the air, which it has no appropriate animations to respond to
 - Health pickups (hams) sometimes float after dropping
-- Shiba player unpredictably falls through the ground on the starting platform about 10% of the time
+- Shiba player unpredictably falls through the ground on the starting platform (computer dependent/performance issue)
 
 External Resources:
 Shiba: https://www.artstation.com/artwork/xzyvym
