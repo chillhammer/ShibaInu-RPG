@@ -83,7 +83,7 @@ MonoBehaviour:
   lockOn: {fileID: 917182388}
   jumpSound: {fileID: 8300000, guid: f6802446acab88b47bd055aa14822473, type: 3}
   hitSound: {fileID: 8300000, guid: bfd715fb532e8fc42a39ad81c719fffa, type: 3}
-  stepSound: {fileID: 8300000, guid: ffbfb5bc56863b14e8705348363cb251, type: 3}
+  stepSound: {fileID: 8300000, guid: 46b1ebd925b96db4db280c9d91a93794, type: 3}
 --- !u!82 &1791391201524726931
 AudioSource:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   invulnerableDuration: 0.5
   flashInterval: 0.1
   physics: {fileID: 1587196934}
-  resetScene: MainScene
+  deathOverlay: {fileID: 0}
 --- !u!114 &6677953666151383925
 MonoBehaviour:
   m_ObjectHideFlags: 0
